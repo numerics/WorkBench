@@ -157,6 +157,7 @@
 		42CCEA67136E5AF90060BBB3 /* CTLinkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CCEA66136E5AF90060BBB3 /* CTLinkButton.m */; };
 		42CCEA69136E5B9E0060BBB3 /* touchBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 42CCEA68136E5B9E0060BBB3 /* touchBg.png */; };
 		42CD35CD1360D51500933199 /* TextLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42CD35CC1360D51500933199 /* TextLineView.m */; };
+		42D9277D18A0A5CF00794623 /* PlayProfile.png in Resources */ = {isa = PBXBuildFile; fileRef = 42D9277C18A0A5CF00794623 /* PlayProfile.png */; };
 		42E1AAE31654C3F800A1AF27 /* GeekBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E1AAE21654C3F800A1AF27 /* GeekBanner.m */; };
 		42E1AAE61654DAAC00A1AF27 /* GeekBannerBkg.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E1AAE51654DAAC00A1AF27 /* GeekBannerBkg.m */; };
 		42E55D631365C6DC00A1F387 /* CTLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E55D621365C6DC00A1F387 /* CTLabel.m */; };
@@ -428,6 +429,7 @@
 		42CCEA68136E5B9E0060BBB3 /* touchBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touchBg.png; sourceTree = "<group>"; };
 		42CD35CB1360D51500933199 /* TextLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextLineView.h; sourceTree = "<group>"; };
 		42CD35CC1360D51500933199 /* TextLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextLineView.m; sourceTree = "<group>"; };
+		42D9277C18A0A5CF00794623 /* PlayProfile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayProfile.png; sourceTree = "<group>"; };
 		42E1AAE11654C3F800A1AF27 /* GeekBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeekBanner.h; sourceTree = "<group>"; };
 		42E1AAE21654C3F800A1AF27 /* GeekBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeekBanner.m; sourceTree = "<group>"; };
 		42E1AAE41654DAAC00A1AF27 /* GeekBannerBkg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeekBannerBkg.h; sourceTree = "<group>"; };
@@ -652,6 +654,7 @@
 		4268456312D5A947000B7A72 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				42D9277C18A0A5CF00794623 /* PlayProfile.png */,
 				42771C9D130B3F0E00A42982 /* icon.png */,
 				427DD62A12D99AF8000D1A37 /* Steve.png */,
 				427DD62B12D99AF8000D1A37 /* StarMask.png */,
@@ -1176,6 +1179,7 @@
 				B73CBE5415E2A62400359E92 /* icon-triangle-down@2x.png in Resources */,
 				B73CBE5515E2A62400359E92 /* icon-triangle-up.png in Resources */,
 				B73CBE5615E2A62400359E92 /* icon-triangle-up@2x.png in Resources */,
+				42D9277D18A0A5CF00794623 /* PlayProfile.png in Resources */,
 				42032063163D0EDC00F88151 /* Calendar.plist in Resources */,
 				4203208B163D0EFD00F88151 /* bkg_dark.png in Resources */,
 				4203208C163D0EFD00F88151 /* button_day_close.png in Resources */,

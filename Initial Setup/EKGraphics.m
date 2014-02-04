@@ -5,7 +5,7 @@
 void drawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor)
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGFloat locations[] = { 0.0, 1.0 };
+    CGFloat locations[] = { 0.0, 1.0};
     
     NSArray *colors = @[(__bridge id) startColor, (__bridge id) endColor];
     
@@ -18,6 +18,26 @@ void drawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startColor
     CGContextAddRect(context, rect);
     CGContextClip(context);
     CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
+    CGContextRestoreGState(context);
+    
+    CGGradientRelease(gradient);
+    CGColorSpaceRelease(colorSpace);
+}
+
+void drawLinearGradientFromTo(CGContextRef context, CGPoint startPt, CGPoint endPt, CGColorRef startColor, CGColorRef endColor)
+{
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    CGFloat locations[] = { 0.0, 1.0};
+    CGRect rect = CGRectStandardize(CGRectMake(startPt.x, startPt.y, endPt.x - startPt.x, endPt.y - startPt.y));
+    
+	NSArray *colors = @[(__bridge id) startColor, (__bridge id) endColor];
+    
+    CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef) colors, locations);
+    
+    CGContextSaveGState(context);
+    CGContextAddRect(context, rect);
+    CGContextClip(context);
+    CGContextDrawLinearGradient(context, gradient, startPt, endPt, 0);
     CGContextRestoreGState(context);
     
     CGGradientRelease(gradient);
@@ -37,6 +57,50 @@ void draw1PxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint, C
     CGContextRestoreGState(context);
     
 }
+void drawXPxStroke(CGContextRef context, CGPoint startPoint, CGPoint endPoint, CGFloat lineWidth, CGColorRef color)
+{
+    
+    CGContextSaveGState(context);
+    CGContextSetLineCap(context, kCGLineCapSquare);
+    CGContextSetStrokeColorWithColor(context, color);
+    CGContextSetLineWidth(context, lineWidth);
+    CGContextMoveToPoint(context, startPoint.x + 0.5, startPoint.y + 0.5);
+    CGContextAddLineToPoint(context, endPoint.x + 0.5, endPoint.y + 0.5);
+    CGContextStrokePath(context);
+    CGContextRestoreGState(context);
+    
+}
+void drawGrayPatchedHLine(CGContextRef context, CGPoint startPoint, CGPoint endPoint,  CGFloat lineWidth)
+{
+	CGFloat width = endPoint.x - startPoint.x;
+	if( width < 20.0)
+	{
+		drawXPxStroke(context, startPoint, endPoint, lineWidth, [UIColor whiteColor].CGColor);
+		return;
+	}
+	drawXPxStroke(context, startPoint, endPoint, lineWidth, [UIColor whiteColor].CGColor);
+	
+	CGFloat dx = arc4random() % 11 * 0.1;
+	CGFloat x = startPoint.x + (dx * width);
+	CGFloat grLngth = 10.0 + (dx * width);
+	CGFloat ramp = 10 + 0.5*(dx * width);
+	CGFloat xe = x + ramp + grLngth + ramp;
+	if( xe > endPoint.x )
+	{
+		if( (x + ramp + grLngth) > endPoint.x)
+		{
+			
+		}
+		else
+			xe = endPoint.x;
+	}
+	drawLinearGradientFromTo(context, CGPointMake(x, startPoint.y), CGPointMake(x+grLngth, startPoint.y), [UIColor whiteColor].CGColor,[UIColor lightGrayColor].CGColor);
+	drawXPxStroke(context, CGPointMake(x, startPoint.y), CGPointMake(x+grLngth, startPoint.y),lineWidth, [UIColor lightGrayColor].CGColor);
+	drawLinearGradientFromTo(context, CGPointMake(x+grLngth, startPoint.y), CGPointMake(x+grLngth+x, startPoint.y), [UIColor lightGrayColor].CGColor,[UIColor whiteColor].CGColor);
+
+}
+
+
 
 CGRect rectFor1PxStroke(CGRect rect)
 {

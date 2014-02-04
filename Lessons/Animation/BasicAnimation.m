@@ -59,8 +59,7 @@
 {
 //    self.backgroundColor  = [UIColor colorWithHexString:@"1b222b"];//[UIColor brownColor];
 	self.backgroundColor = [UIColor darkGrayColor ];
-//    UIImageView *cod = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CODImage.png"]];
-//
+//    UIImageView *cod = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"PlayProfile.png"]];
 //    [self  addSubview:cod];
     
     WorkBenchAppDelegate *evDelegate = (WorkBenchAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -136,13 +135,13 @@
     
 
 
-    cellFrame = CGRectMake (50, 250, 104, 72);
+    cellFrame = CGRectMake (6, 178, 102, 76);
     self.gsView = [[GHCustomContainerLayer alloc] initWithFrame:cellFrame];
     self.gsView.addTopLeftNotch = NO;
     self.gsView.borderColor = [UIColor colorWithHexString:@"0xFFFFFF"];
     self.gsView.fillColor = [UIColor colorWithHexString:@"0xc5f1fd"];
     self.gsView.lineWidth = 1.0;
-    self.gsView.fillAlpha = 0.5;
+    self.gsView.fillAlpha = 0.3;
     self.gsView.shouldCreateGradient = NO;
     self.gsView.addShadow = NO;
     [self addSubview:self.gsView];

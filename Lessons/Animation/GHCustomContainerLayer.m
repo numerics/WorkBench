@@ -11,10 +11,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+EliteKit.h"
 
-static inline double radians (double degrees)
-{
-    return degrees * M_PI/180;
-}
+//static inline double radians (double degrees)
+//{
+//    return degrees * M_PI/180;
+//}
 
 void MyDrawColoredPattern (void *info, CGContextRef context)
 {
@@ -27,7 +27,7 @@ void MyDrawColoredPattern (void *info, CGContextRef context)
 //    CGContextAddArc(context, 3, 3, 2, 0, radians(360), 0);
 //    CGContextFillPath(context);
     
-    CGContextAddRect(context, CGRectMake(3, 3, 2, 2));
+    CGContextAddRect(context, CGRectMake(3, 3, 1, 1));
 //    CGContextAddArc(context, 16, 16, 2, 0, radians(360), 0);
     CGContextFillPath(context);
 }
@@ -58,7 +58,7 @@ void MyDrawColoredPattern (void *info, CGContextRef context)
         
         
         pathRect = CGRectMake(0, 0, frame.size.width, frame.size.height);
-        self.notchSize = 10;
+        self.notchSize = 6;
         self.shouldCreateGradient = NO;
         
         self.alpha = 1.0;
@@ -215,6 +215,58 @@ void MyDrawColoredPattern (void *info, CGContextRef context)
     
 }
 
+-(CAGradientLayer *)createGradientMask:(CGRect)frame
+{
+    CAGradientLayer *gr = [CAGradientLayer layer];
+    gr.contentsScale = [UIScreen mainScreen].scale;
+    
+    gr.frame = frame;
+    gr.startPoint = CGPointMake(0.5, 0.0);
+    gr.endPoint   = CGPointMake(0.5, 1.0);
+	
+    //NSString *sColor = @"0x020202";
+    NSString *sColor = @"0x000000";
+	
+    NSNumber *stop1 = [NSNumber numberWithFloat:0.00];
+    NSNumber *stop2 = [NSNumber numberWithFloat:0.25];
+    NSNumber *stop3 = [NSNumber numberWithFloat:0.44];
+    NSNumber *stop4 = [NSNumber numberWithFloat:0.63];
+    NSNumber *stop5 = [NSNumber numberWithFloat:1.00];
+    
+    UIColor *color1 = [UIColor colorWithHexString:sColor withAlpha:0.0];
+    UIColor *color2 = [UIColor colorWithHexString:sColor withAlpha:0.0];
+    UIColor *color3 = [UIColor colorWithHexString:sColor withAlpha:0.5];
+    UIColor *color4 = [UIColor colorWithHexString:sColor withAlpha:1.0];
+    UIColor *color5 = [UIColor colorWithHexString:sColor withAlpha:1.0];
+	
+    NSArray *locations = [NSArray arrayWithObjects:stop1, stop2, stop3, stop4, stop5,nil];
+    gr.locations = locations;
+    
+    
+    gr.colors = [NSArray arrayWithObjects:
+                 (id)color1.CGColor,
+                 (id)color2.CGColor,
+                 (id)color3.CGColor,
+                 (id)color4.CGColor,
+                 (id)color5.CGColor,
+                 nil];
+    
+    gr.opacity = 1.0;
+    
+//    CGRect shadowRect = CGRectMake(0, 0, frame.size.width, 4.0);
+//    CGPathRef shadowPath = CGPathCreateWithRect(shadowRect, NULL);
+//    CGSize sOffSet = CGSizeMake(0.0, frame.size.height + 2.0);
+    
+//    gr.shadowColor = [UIColor blackColor].CGColor;
+//    gr.shadowOpacity = 0.8;
+//    gr.shadowOffset = sOffSet;
+//    gr.shadowRadius = 4.0;
+//    gr.shadowPath = shadowPath;
+//	
+//	CGPathRelease(shadowPath);
+    return gr;
+}
+
 -(CAGradientLayer *)createGradient
 {
     CAGradientLayer *gr = [CAGradientLayer layer];
@@ -248,6 +300,7 @@ void MyDrawColoredPattern (void *info, CGContextRef context)
     [[UIColor whiteColor] setStroke];
     
     UIBezierPath *bpath = [UIBezierPath bezierPath];
+	bpath.lineWidth = 2.0;
     [bpath moveToPoint:CGPointMake(left, top + self.notchSize)];
     [bpath addLineToPoint:CGPointMake(left ,top)];
     [bpath addLineToPoint:CGPointMake(left + self.notchSize ,top)];
@@ -268,10 +321,12 @@ void MyDrawColoredPattern (void *info, CGContextRef context)
     [bpath addLineToPoint:CGPointMake(left, bottom)];
     [bpath addLineToPoint:CGPointMake(left, bottom - self.notchSize)];
     [bpath stroke];
+	bpath.lineWidth = 1.0;
     
-//    UIColor * bgColor = [UIColor colorWithHue:0 saturation:0 brightness:0.15 alpha:1.0];
-//    CGContextSetFillColorWithColor(context, bgColor.CGColor);
-//    CGContextFillRect(context, rect);
+	draw1PxStroke(context, CGPointMake(left+3, top+2), CGPointMake(right-3, top+2), [UIColor whiteColor].CGColor);
+	drawLinearGradientFromTo(context, CGPointMake(left+20, top+2), CGPointMake(left+30, top+3), [UIColor whiteColor].CGColor,[UIColor lightGrayColor].CGColor);
+	draw1PxStroke(context, CGPointMake(left+30, top+2), CGPointMake(left+40, top+2), [UIColor lightGrayColor].CGColor);
+	drawLinearGradientFromTo(context, CGPointMake(left+40, top+2), CGPointMake(left+50, top+3), [UIColor lightGrayColor].CGColor,[UIColor whiteColor].CGColor);
     
     static const CGPatternCallbacks callbacks = { 0, &MyDrawColoredPattern, NULL };
     
@@ -283,17 +338,30 @@ void MyDrawColoredPattern (void *info, CGContextRef context)
     CGPatternRef pattern = CGPatternCreate(NULL,
                                            CGRectInset(rect, 3.0, 3.0),
                                            CGAffineTransformIdentity,
-                                           6,
-                                           6,
+                                           4,
+                                           4,
                                            kCGPatternTilingConstantSpacing,
                                            true,
                                            &callbacks);
-    CGFloat alpha = 1.0;
+    CGFloat alpha = .30;
     CGContextSetFillPattern(context, pattern, &alpha);
     CGPatternRelease(pattern);
     CGContextFillRect(context, CGRectInset(rect, 4.0, 4.0));
     CGContextRestoreGState(context);
     
+	UIColor *fgC = [UIColor colorWithHexString:@"0xd1f5ff"];
+	CGContextSaveGState(context);
+
+    UIColor * shadowColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1.0];
+	CGContextSetAlpha(context, 0.07);
+    CGContextSetFillColorWithColor(context, fgC.CGColor);
+    CGContextSetShadowWithColor(context, CGSizeMake(-10, 14), 5, shadowColor.CGColor);
+	CGContextAddArc(context, left+35, top+14, 10, 0, radians(360), 0);
+	CGContextFillPath(context);
+    CGContextSetShadowWithColor(context, CGSizeMake(5, -14), 5, shadowColor.CGColor);
+	CGContextAddArc(context, left+40, top+28, 10, 0, radians(360), 0);
+	CGContextFillPath(context);
+	CGContextRestoreGState(context);
 
 }
 
@@ -332,41 +400,7 @@ void MyDrawColoredPattern (void *info, CGContextRef context)
     return path;
     
 }
-/*
--(CGMutablePathRef)createFrame:(CGRect)rect
-{
-    CGFloat left = rect.origin.x;
-    CGFloat right = rect.origin.x + rect.size.width;
-    CGFloat top = rect.origin.y;
-    CGFloat bottom = rect.origin.y + rect.size.height;
-    
-    CGFloat topLeftEdgeInset = 0.0, topRightEdgeInset = 0.0, bottomLeftEdgeInset = 0.0, bottomRightEdgeInset = 0.0;
-    
-    if (self.addTopLeftNotch)
-        topLeftEdgeInset = self.notchSize;
-    
-    if (self.addTopRightNotch)
-        topRightEdgeInset = self.notchSize;
-    
-    if (self.addBottomRightNotch)
-        bottomRightEdgeInset = self.notchSize;
-    
-    if (self.addBottomLeftNotch)
-        bottomLeftEdgeInset = self.notchSize;
-    
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathMoveToPoint   (path, NULL, left  + topLeftEdgeInset,top           );
-    CGPathAddLineToPoint(path, NULL, right - topRightEdgeInset,top          );
-    CGPathAddLineToPoint(path, NULL, right,  top + topRightEdgeInset        );
-    CGPathAddLineToPoint(path, NULL, right,  bottom - bottomRightEdgeInset  );
-    CGPathAddLineToPoint(path, NULL, right - bottomRightEdgeInset , bottom  );
-    CGPathAddLineToPoint(path, NULL, left  + bottomLeftEdgeInset , bottom   );
-    CGPathAddLineToPoint(path, NULL, left ,  bottom - bottomLeftEdgeInset   );
-    CGPathAddLineToPoint(path, NULL, left,   top + topLeftEdgeInset         );
-    CGPathCloseSubpath(path);
-    return path;
-}
-*/
+
 
 - (void) commit
 {
@@ -392,19 +426,19 @@ void MyDrawColoredPattern (void *info, CGContextRef context)
     pathLayer = [CAShapeLayer layer];
 	[self.layer addSublayer:pathLayer];
     pathLayer.contentsScale = [UIScreen mainScreen].scale;
-    pathLayer.lineWidth = self.lineWidth;
+    pathLayer.lineWidth = 0;//self.lineWidth;
     pathLayer.strokeColor = self.borderColor.CGColor;
     pathLayer.lineCap = kCALineCapRound;
     pathLayer.fillColor = [UIColor clearColor].CGColor;
     pathLayer.path = containerPath;
     
-    maskLayer = [CAShapeLayer layer];
-    maskLayer.lineWidth = 0;//self.lineWidth;
-    maskLayer.path = containerPath;
-    [shapeLayer addSublayer:maskLayer];
     
     if( self.shouldCreateGradient)
     {
+		maskLayer = [CAShapeLayer layer];
+		maskLayer.lineWidth = 0;
+		maskLayer.path = containerPath;
+		[shapeLayer addSublayer:maskLayer];
         maskLayer.fillColor = [UIColor blackColor].CGColor;
         if( gradientLayer)
         {
@@ -418,7 +452,28 @@ void MyDrawColoredPattern (void *info, CGContextRef context)
     }
     else
     {
-        maskLayer.fillColor = self.fillColor.CGColor;
+		maskLayer = [CAShapeLayer layer];
+		maskLayer.lineWidth = 0;
+		
+//		CGMutablePathRef path = CGPathCreateMutable();
+//		CGPathMoveToPoint(path, NULL, 0.5*self.frame.size.width , 0);
+//		CGPathAddLineToPoint(path, NULL, 0, self.frame.size.height);
+//		CGPathAddLineToPoint(path, NULL, self.frame.size.width, self.frame.size.height);
+//		CGPathCloseSubpath(path);
+		maskLayer.path = containerPath;
+		[shapeLayer addSublayer:maskLayer];
+//        maskLayer.fillColor = [UIColor blackColor].CGColor;
+//        if( gradientLayer)
+//        {
+//            [gradientLayer removeFromSuperlayer];
+//        }
+//        CGRect mframe = CGRectMake(1, -4, 10, 0.3*self.frame.size.height);
+//        gradientLayer = [self createGradientMask:mframe];
+//        [shapeLayer addSublayer:gradientLayer];
+//        [gradientLayer setMask:maskLayer];
+//        [gradientLayer setNeedsDisplay];
+		
+		maskLayer.fillColor = self.fillColor.CGColor;
         [shapeLayer setNeedsDisplay];
     }
     

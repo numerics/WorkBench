@@ -1380,6 +1380,7 @@
 				GCC_PREFIX_HEADER = WorkBench_Prefix.pch;
 				INFOPLIST_FILE = "WorkBench-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = WorkBench;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
@@ -1396,6 +1397,7 @@
 				GCC_PREFIX_HEADER = WorkBench_Prefix.pch;
 				INFOPLIST_FILE = "WorkBench-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = WorkBench;
 				VALIDATE_PRODUCT = YES;
 			};

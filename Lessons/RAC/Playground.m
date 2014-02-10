@@ -19,6 +19,11 @@
 	return @"RAC";
 }
 
+//-(void)RAC_KVO:(id)modelName propertyName:(id)propName
+//{
+//	RAC(self, propName) = [[RACObserve(self, modelName) distinctUntilChanged] deliverOn:[RACScheduler mainThreadScheduler]];
+//}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -35,6 +40,27 @@
 	self.backgroundColor = [UIColor whiteColor];
 	
 	//WorkBenchAppDelegate *evDelegate = (WorkBenchAppDelegate *)[[UIApplication sharedApplication] delegate];
+	WorkBenchAppDelegate *evDelegate = (WorkBenchAppDelegate *)[[UIApplication sharedApplication] delegate];
+	
+    self.nameField = [[UILabel alloc]initWithFrame:CGRectMake(50, 140, 220, 30)];
+    [self addSubview:self.nameField];
+    self.nameField.backgroundColor = [UIColor clearColor];
+	self.nameField.textColor = [UIColor blackColor];
+
+	self.sButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	self.sButton.frame = CGRectMake(10., 10., 145., 44.);
+	[self.sButton setTitle:@"Test RAC" forState:UIControlStateNormal];
+	//[self.sButton addTarget:self action:@selector(testKVO:) forControlEvents:UIControlEventTouchUpInside];
+	[evDelegate.benchViewController.parametersView addSubview:self.sButton];
+	
+	
+	RACSignal *updateLabel = [self.sButton rac_signalForControlEvents:UIControlEventTouchUpInside];
+	[updateLabel subscribeNext:^(id sender) {
+		self.password = @"KVO Changed";
+	}];
+	RACSignal *nameSignal = [RACObserve(self, self.password) distinctUntilChanged];
+	RAC(self, self.nameField.text) = [nameSignal deliverOn:[RACScheduler mainThreadScheduler]];
+	
 	
 	NSArray *array = @[@(1), @(2), @(3), @(4), @(5), @(6), @(7)];
     
@@ -51,6 +77,9 @@
         return [accumulator stringByAppendingString:value];
     }]);
     
+	
+	
+	
     self.textField = [[UITextField alloc]initWithFrame:CGRectMake(50, 80, 220, 30)];
     self.textField.delegate = self;
     [self addSubview:self.textField];
@@ -81,5 +110,10 @@
 	NSLog(@" createEnabled: %@", self.createEnabled);
 }
 
+- (void)testKVO:(id)sender
+{
+	self.password = @"KVO Changed";
+	
+}
 
 @end

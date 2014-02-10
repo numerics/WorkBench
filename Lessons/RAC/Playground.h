@@ -13,10 +13,13 @@
 	
 }
 @property(nonatomic, strong)UITextField      *textField;
+@property(nonatomic, strong)UILabel			*nameField;
 
 @property(nonatomic, strong)NSString         *password;
 @property(nonatomic, strong)NSString         *passwordConfirmation;
 
 @property(nonatomic, strong)NSNumber         *createEnabled;
+
+@property(nonatomic, strong)UIButton         *sButton;
 
 @end

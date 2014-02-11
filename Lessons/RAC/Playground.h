@@ -19,7 +19,9 @@
 @property(nonatomic, strong)NSString         *passwordConfirmation;
 
 @property(nonatomic, strong)NSNumber         *createEnabled;
-
 @property(nonatomic, strong)UIButton         *sButton;
+
+@property(nonatomic )int					iNumb;
+@property(nonatomic, strong)NSString         *sNumb;
 
 @end

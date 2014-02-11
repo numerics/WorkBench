@@ -57,10 +57,22 @@
 	RACSignal *updateLabel = [self.sButton rac_signalForControlEvents:UIControlEventTouchUpInside];
 	[updateLabel subscribeNext:^(id sender) {
 		self.password = @"KVO Changed";
+		self.iNumb = 200;
 	}];
-	RACSignal *nameSignal = [RACObserve(self, self.password) distinctUntilChanged];
-	RAC(self, self.nameField.text) = [nameSignal deliverOn:[RACScheduler mainThreadScheduler]];
-	
+//	RACSignal *nameSignal = [RACObserve(self, self.password) distinctUntilChanged];
+//	RAC(self, self.nameField.text) = [nameSignal deliverOn:[RACScheduler mainThreadScheduler]];
+
+	RACSignal *numbSignal = [RACObserve(self, self.iNumb) distinctUntilChanged];
+	RAC(self, self.nameField.text) = [numbSignal map:^id(id value){
+		return [value stringValue];
+	}];
+
+	RACSignal *strSignal = [RACObserve(self, self.iNumb) distinctUntilChanged];
+	RAC(self, self.sNumb) = [[strSignal map:^id(id value){
+		return [value stringValue];
+	}] deliverOn:[RACScheduler mainThreadScheduler]];
+
+	self.iNumb = 100;
 	
 	NSArray *array = @[@(1), @(2), @(3), @(4), @(5), @(6), @(7)];
     

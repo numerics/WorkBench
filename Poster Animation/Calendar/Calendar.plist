@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CalendarLayoutView</key>
+	<dict>
+		<key>BB</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>bkg_light</string>
+			<key>backgroundImage</key>
+			<string>bkg_light</string>
+		</dict>
+		<key>CH</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>bkg_light.png</string>
+		</dict>
+		<key>IN</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>bkg_light.png</string>
+		</dict>
+		<key>TF</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>bkg_light</string>
+			<key>backgroundImage</key>
+			<string>bkg_light</string>
+		</dict>
+	</dict>
+	<key>CalendarView</key>
+	<dict>
+		<key>BB</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>bkg_dark</string>
+			<key>sClass</key>
+			<string>BBCalendarView</string>
+		</dict>
+		<key>CH</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>bkg_dark.png</string>
+		</dict>
+		<key>IN</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>bkg_dark.png</string>
+		</dict>
+		<key>TF</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>bkg_light</string>
+		</dict>
+	</dict>
+	<key>CalendarDayView</key>
+	<dict>
+		<key>BB</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>clearColor</string>
+			<key>sClass</key>
+			<string>BBCalendarDayView</string>
+			<key>dClass</key>
+			<string>BBCalendarDayData</string>
+		</dict>
+		<key>CH</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>clearColor</string>
+			<key>inCurrentMonthColor</key>
+			<dict>
+				<key>Gray</key>
+				<string>27.0</string>
+				<key>Alpha</key>
+				<string>1.0</string>
+			</dict>
+			<key>notInCurrentMonthColor</key>
+			<dict>
+				<key>Gray</key>
+				<string>0.0</string>
+				<key>Alpha</key>
+				<string>1.0</string>
+			</dict>
+			<key>borderColor</key>
+			<dict>
+				<key>Gray</key>
+				<string>38.0</string>
+				<key>Alpha</key>
+				<string>1.0</string>
+			</dict>
+			<key>toggleSelection</key>
+			<string>NO</string>
+			<key>dClass</key>
+			<string>CHCalendarDayData</string>
+		</dict>
+		<key>IN</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>clearColor</string>
+			<key>inCurrentMonthColor</key>
+			<dict>
+				<key>Gray</key>
+				<string>27.0</string>
+				<key>Alpha</key>
+				<string>1.0</string>
+			</dict>
+			<key>notInCurrentMonthColor</key>
+			<dict>
+				<key>Gray</key>
+				<string>0.0</string>
+				<key>Alpha</key>
+				<string>1.0</string>
+			</dict>
+			<key>borderColor</key>
+			<dict>
+				<key>Gray</key>
+				<string>38.0</string>
+				<key>Alpha</key>
+				<string>1.0</string>
+			</dict>
+			<key>toggleSelection</key>
+			<string>NO</string>
+			<key>Workouts</key>
+			<array>
+				<string>Ab Ripper X</string>
+				<string>Back &amp; Biceps</string>
+				<string>Back &amp; Biceps + Ab Ripper X</string>
+				<string>Cardio X</string>
+				<string>Chest &amp; Back</string>
+				<string> Chest &amp; Back + Ab Ripper X</string>
+				<string>Chest, Shoulders &amp; Triceps</string>
+				<string>Core Synergistics</string>
+				<string>Fit Test</string>
+				<string>Kenpo X</string>
+				<string>Legs &amp; Back</string>
+				<string>Legs &amp; Back + Ab Ripper X</string>
+				<string>Plyometrics</string>
+				<string>Shoulders &amp; Arms</string>
+				<string>Shoulders &amp; Arms + Ab Ripper X</string>
+				<string>X Stretch</string>
+				<string>Yoga X</string>
+			</array>
+			<key>dClass</key>
+			<string>INCalendarDayData</string>
+		</dict>
+		<key>TF</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>clearColor</string>
+			<key>toggleSelection</key>
+			<string>NO</string>
+			<key>dClass</key>
+			<string>TFCalendarDayData</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

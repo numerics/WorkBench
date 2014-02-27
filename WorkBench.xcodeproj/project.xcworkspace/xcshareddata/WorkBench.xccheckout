@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>64C10D76-A5E0-4185-9492-DA932C0D56DD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WorkBench</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CF2BA4F3-2203-40AF-BACE-877A175D2B8C</key>
+		<string>http://svndev.productpartners.com/svn/bbMobile/iOS/WorkBench</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WorkBench.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CF2BA4F3-2203-40AF-BACE-877A175D2B8C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>CF2BA4F3-2203-40AF-BACE-877A175D2B8C</key>
+		<string>http://svndev.productpartners.com/svn/bbMobile</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://svndev.productpartners.com/svn/bbMobile/iOS/WorkBench/WorkBench.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CF2BA4F3-2203-40AF-BACE-877A175D2B8C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CF2BA4F3-2203-40AF-BACE-877A175D2B8C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WorkBench_1</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -72,7 +72,8 @@
 				   @"Avanced Techniques",
 				   nil];
 		
-		Lessons = [[NSArray alloc] initWithObjects:geom, hier, drawing, animation, special, advanced, nil]; 
+		Lessons = [[NSArray alloc] initWithObjects:geom, hier, drawing, animation, special, advanced, nil];
+		
 	}
 	return self;
 }

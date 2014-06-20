@@ -37,11 +37,13 @@
 
 - (void)setUpView 
 {
-	self.backgroundColor = [UIColor whiteColor];
+	self.backgroundColor = [UIColor grayColor];
     DetailData* subItem11 =	[DetailData initWithTarget:self action:@selector(subItemSelected1:) imageNamed:@"subItemImage1" title:@"subItem11"];
     DetailData* subItem12 =	[DetailData initWithTarget:self action:@selector(subItemSelected2:) imageNamed:@"subItemImage2" title:@"subItem12"];
     DetailData* subItem13 =	[DetailData initWithTarget:self action:@selector(subItemSelected3:) imageNamed:@"subItemImage3" title:@"subItem13"];
     DetailData* subItem14 =	[DetailData initWithTarget:self action:@selector(subItemSelected4:) imageNamed:@"subItemImage4" title:@"subItem14"];
+    DetailData* subItem15 =	[DetailData initWithTarget:self action:@selector(subItemSelected4:) imageNamed:@"subItemImage5" title:@"subItem15"];
+    DetailData* subItem16 =	[DetailData initWithTarget:self action:@selector(subItemSelected4:) imageNamed:@"subItemImage6" title:@"subItem16"];
     
     DetailData* subItem21 =	[DetailData initWithTarget:self action:@selector(subItemSelected1:) imageNamed:@"subItemImage1" title:@"subItem21"];
     DetailData* subItem22 =	[DetailData initWithTarget:self action:@selector(subItemSelected2:) imageNamed:@"subItemImage2" title:@"subItem22"];
@@ -58,7 +60,7 @@
     item1.detail = @"To/From Downtown Los Angeles";
     item1.icon   = nil;[UIImage imageNamed:@"home-icon-preinterview"];
     item1.content = [[DetailItem alloc] init];
-    item1.content.subTableItems = [NSArray arrayWithObjects:subItem11,subItem12,subItem13,subItem14,nil];
+    item1.content.subTableItems = [NSArray arrayWithObjects:subItem11,subItem12,subItem13,subItem14,subItem15,subItem16,nil];
     
     
     Item* item2 = [[Item alloc] init];
@@ -79,6 +81,8 @@
     if( self.accordian == nil )
     {
         self.accordian =[[AccordianTableView alloc] initWithFrame:tFrame style:UITableViewStylePlain];
+        self.accordian.scrollEnabled = NO;
+        
         //AccordianViewController* srvc = [[AccordianViewController alloc] initWithNibName:@"BlankTableViewController" bundle:nil];
         //self.accordian = srvc;
         self.accordian.contentArray = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"home-heading.png"],item1,item2,item3,nil];

@@ -10,7 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "WorkBenchAppDelegate.h"
 #import "WorkBenchViewController.h"
-#import "UIColor+EliteKit.h"
 #import <objc/runtime.h>
 
 @interface CustomDrawView()

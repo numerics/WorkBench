@@ -23,8 +23,8 @@
 
 @property (nonatomic,strong)	Item        *item;
 @property (nonatomic,assign)	BOOL        expanded;
-@property (nonatomic,strong)    UILabel     *detailLabel;
-@property (nonatomic,strong)    UILabel     *titleLabel;
+@property (nonatomic,strong)    CKLabel     *detailLabel;
+@property (nonatomic,strong)    CKLabel     *titleLabel;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
 

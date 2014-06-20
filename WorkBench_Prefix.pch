@@ -5,5 +5,72 @@
 #ifdef __OBJC__
     #import <Foundation/Foundation.h>
     #import <UIKit/UIKit.h>
-	#import "UIFactory.h"
+#import "DateUtil.h"
+#import "UIFactory.h"
+
+/// *** IMPORT CATEGORIES THAT THE PROJECT CLASSES COULD/WOULD/SHOULD IMPLEMENT *** ///
+#import "UIDevice+Additions.h"
+#import "UIColor+Additions.h"
+#import "UIView+Additions.h"
+#import "UIViewController+Additions.h"
+#import "UIButton+Additions.h"
+
+#import "NSDictionary+Addititions.h"
+#import "NSString+Additions.h"
+#import "NSURL+Additions.h"
+
+/// *** IMPORT UI CLASSES THAT THE PROJECT WOULD INCLUDE LATER AS A COMMONKIT LIBRARY *** ///
+#import "CKArrowButton.h"
+#import "CKButton.h"
+#import "CKCustomButton.h"
+#import "CKCustomButtonControl.h"
+#import "CKRectangleButton.h"
+#import "CKCustomActivityIndicator.h"
+#import "CKTextInputField.h"
+#import "CKCustomBadge.h"
+#import "CKPopTipView.h"
+#import "CKLabel.h"
+#import "CKScrollView.h"
+#import "CKGraphics.h"
+
+/// *** IMPORT FILES/CLASSES THAT THE PROJECT WOULD CONSIDER 'GLOBAL' *** ///
+#import "MZStyleManager.h"
+#import "MZLabelMacros.h"
+#import "MZButtonMacros.h"
+
+#define isiPad() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad
+#define isiPhone() [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone
+#define iPadORPhone(a,b)  isiPad() ? (a) : (b)
+
+//OS Detection
+#define isiOS6() [[[UIDevice currentDevice] systemVersion] intValue] == 6
+#define isiOS5() [[[UIDevice currentDevice] systemVersion] intValue] == 5
+#define isiOS7() [[[UIDevice currentDevice] systemVersion] intValue] == 7
+
+//application information
+#define appVersion() [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define buildVersion() [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+
+#define BLOCK_SELF_REF_OUTSIDE() __weak __typeof(self) weakSelf = self
+#define BLOCK_SELF_REF_INSIDE() __typeof(self) self = weakSelf
+
+#ifndef LOGGING_ENABLED
+#ifdef DEBUGLOGGING									// if the Flag is on, then logging is ON.
+#define LOGGING_ENABLED     1
+#else
+#define LOGGING_ENABLED     1
+#endif
+#endif
+
+
+#ifndef FILELOGGING_ENABLED
+#define FILELOGGING_ENABLED		1					// make changes here, to have logging also sent to a file
+#endif
+
+#ifndef STACKLOGGING_ENABLED
+#define STACKLOGGING_ENABLED	0					// make changes here, to include a Stack Trace
+#endif
+
+#define LOGMAXFILESIZE              100000000			// up it to 100 MB
+#import "SNLog.h"
 #endif

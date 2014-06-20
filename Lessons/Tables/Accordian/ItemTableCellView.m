@@ -25,29 +25,38 @@
 	
 	if (originalTitleY == 0)
 	{
-		originalTitleY = self.textLabel.center.y;
+		originalTitleY = self.titleLabel.center.y;
 	}
-	self.textLabel.text	= item.title;
-	self.imageView.image = item.icon;
+	self.titleLabel.text    = item.title;
+	self.imageView.image    = item.icon;
 	UIImage* arrow;
-	CGPoint newCenter = self.textLabel.center;
+	CGPoint newCenter = self.titleLabel.center;
 	if (expanded) 
 	{
 		arrow = [UIImage imageNamed:@"icon-triangle-down.png"];
-		self.detailTextLabel.hidden = YES;
+		self.detailLabel.hidden = YES;
 		newCenter.y = self.accessoryView.center.y;//self.imageView.center.y;
 	}
 	else 
 	{
 		arrow = [UIImage imageNamed:@"icon-triangle-up.png"];
-		self.detailTextLabel.hidden = NO;
-		self.detailTextLabel.text = item.detail;
+		self.detailLabel.hidden = NO;
+		self.detailLabel.text = item.detail;
 		newCenter.y = originalTitleY;
 	}
 	[(UIImageView*)self.accessoryView setImage:arrow];
-	self.textLabel.center = newCenter;
-    self.textLabel.adjustsFontSizeToFitWidth = YES;
-	//[[UIFactory sharedInstance] adjustLabelSizeToFitText:self.textLabel];
+	self.titleLabel.center = newCenter;
+    self.titleLabel.adjustsFontSizeToFitWidth = YES;
+    self.detailLabel.adjustsFontSizeToFitWidth = YES;
+    [self.titleLabel setLabelApperance:@"AM1400L"];
+    [self.detailLabel setLabelApperance:@"AM1195L"];
+    self.titleLabel.left = 60.0;
+    self.titleLabel.top = (self.detailLabel.hidden) ? 14 : 18.0;
+    self.detailLabel.left = 60.0;
+    self.detailLabel.top = self.titleLabel.bottom;
+    
+	//[[UIFactory sharedInstance] adjustLabelSizeToFitText:self.titleLabel];
+    
 	[self setNeedsDisplay];
 }
 
@@ -65,13 +74,20 @@
         // Initialization code.
 		self.backgroundView = [[UIImageView alloc] initWithImage:kItemTableCellBackgroundImage];
 		self.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+		self.titleLabel = [[CKLabel alloc]initWithFrame:CGRectMake(0, 0, self.contentView.frame.size.width - 80.0, 18)];
+		self.detailLabel = [[CKLabel alloc]initWithFrame:CGRectMake(0, 0, self.contentView.frame.size.width - 80.0, 22)];
 		
-		self.textLabel.backgroundColor = [UIColor clearColor];
-		self.textLabel.textColor = kHeadingTintColor;
+        
+        self.titleLabel.backgroundColor = [UIColor clearColor];
+		self.titleLabel.textColor = kHeadingTintColor;
 		
-		self.detailTextLabel.backgroundColor = [UIColor clearColor];
-		self.detailTextLabel.numberOfLines = 2;
+		self.detailLabel.backgroundColor = [UIColor clearColor];
+		self.detailLabel.numberOfLines = 2;
 		
+        [self.contentView addSubview:self.titleLabel];
+        [self.contentView addSubview:self.detailLabel];
+        
 		self.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon-triangle-up.png"]];
 		
 		originalTitleY = 0;

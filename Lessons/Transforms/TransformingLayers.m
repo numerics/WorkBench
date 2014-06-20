@@ -60,13 +60,13 @@
 	rotateButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	rotateButton.frame = CGRectMake(165., 10., 145., 44.);
 	[rotateButton setTitle:@"Rotate" forState:UIControlStateNormal];
-	[rotateButton addTarget:self action:@selector(rotate:) forControlEvents:UIControlEventTouchUpInside];
+	[rotateButton addTarget:self action:@selector(rotateObject:) forControlEvents:UIControlEventTouchUpInside];
 	[evDelegate.benchViewController.parametersView addSubview:rotateButton];
 	
 	scaleButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	scaleButton.frame = CGRectMake(10., 60., 145., 44.);
 	[scaleButton setTitle:@"Scale" forState:UIControlStateNormal];
-	[scaleButton addTarget:self action:@selector(scale:) forControlEvents:UIControlEventTouchUpInside];
+	[scaleButton addTarget:self action:@selector(scaleObject:) forControlEvents:UIControlEventTouchUpInside];
 	[evDelegate.benchViewController.parametersView addSubview:scaleButton];
 	
 	translateButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -116,7 +116,7 @@
 	[self updatePropertiesLabel];
 }
 
-- (void)rotate:(id)sender 
+- (void)rotateObject:(id)sender
 {
 	if(self.cumulative) 
 	{
@@ -134,7 +134,7 @@
 	[self updatePropertiesLabel];
 }
 
-- (void)scale:(id)sender 
+- (void)scaleObject:(id)sender 
 {
 	if(self.cumulative) 
 	{

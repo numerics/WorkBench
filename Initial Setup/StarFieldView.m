@@ -93,12 +93,6 @@ static double frandom(double start, double end)
 	starCount.value = 200.0;
 	numberOfStars = 200.0;
 	[evDelegate.benchViewController.parametersView addSubview:starCount];
-
-	UILabel *nstars = [[UILabel alloc ] initWithFrame:CGRectMake(180, 130, 160, 44.)];
-	nstars.numberOfLines = 2;
-	nstars.text = @"Number of items from 10 to 500";
-	[evDelegate.benchViewController.parametersView addSubview:nstars];
-
 	
 	guideToEye = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	guideToEye.frame = CGRectMake(10, 200, 250, 44.);
@@ -106,10 +100,6 @@ static double frandom(double start, double end)
 	[guideToEye addTarget:self action:@selector(playEye:) forControlEvents:UIControlEventTouchUpInside];
 	[evDelegate.benchViewController.parametersView addSubview:guideToEye];
 	
-	UILabel *desc = [[UILabel alloc ] initWithFrame:CGRectMake(10, 240, 290, 44.)];
-	desc.numberOfLines = 2;
-	desc.text = @"Use your cursor/finger to pan/swipe and click on the star field.";
-	[evDelegate.benchViewController.parametersView addSubview:desc];
 	
 	rootLayer = [CALayer layer];
 	[self.layer addSublayer:rootLayer];

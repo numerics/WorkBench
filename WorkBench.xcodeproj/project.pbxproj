@@ -12,6 +12,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		42006FB218828CBE00890E75 /* Playground.m in Sources */ = {isa = PBXBuildFile; fileRef = 42006FB118828CBE00890E75 /* Playground.m */; };
+		42006FB51882904800890E75 /* NoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42006FB41882904800890E75 /* NoxView.m */; };
 		42032063163D0EDC00F88151 /* Calendar.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42032058163D0EDB00F88151 /* Calendar.plist */; };
 		42032064163D0EDC00F88151 /* CalendarDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203205A163D0EDB00F88151 /* CalendarDayView.m */; };
 		42032065163D0EDC00F88151 /* CalendarLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4203205C163D0EDB00F88151 /* CalendarLayoutView.m */; };
@@ -166,6 +168,7 @@
 		42E55D8A1365E61D00A1F387 /* UIFont+AppDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 42E55D841365E61D00A1F387 /* UIFont+AppDefault.m */; };
 		42EA91C115CE1BD30017C73A /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EA91C015CE1BD30017C73A /* NSString+Additions.m */; };
 		42EA91C415CE1BE70017C73A /* StringFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 42EA91C315CE1BE70017C73A /* StringFunctions.m */; };
+		618BFCD3B9C04F2C84668635 /* libPods-Workbench.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF3EFCC1029431CA37F9238 /* libPods-Workbench.a */; };
 		B7113FB617B2C50500C7F466 /* GHCustomContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7113FB517B2C50500C7F466 /* GHCustomContainerView.m */; };
 		B7113FB917B2C6AF00C7F466 /* UIColor+EliteKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B7113FB817B2C6AF00C7F466 /* UIColor+EliteKit.m */; };
 		B714626717A9A23300B59630 /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = B714626617A9A23200B59630 /* DrawView.m */; };
@@ -196,7 +199,7 @@
 		B73CBE5615E2A62400359E92 /* icon-triangle-up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B73CBE3D15E2A62400359E92 /* icon-triangle-up@2x.png */; };
 		B73CBE5715E2A62400359E92 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = B73CBE3F15E2A62400359E92 /* Item.m */; };
 		B73CBE5815E2A62400359E92 /* ItemTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73CBE4115E2A62400359E92 /* ItemTableCellView.m */; };
-		B73CBE5915E2A62400359E92 /* AccordianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B73CBE4415E2A62400359E92 /* AccordianViewController.m */; };
+		B73CBE5915E2A62400359E92 /* AccordianTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73CBE4415E2A62400359E92 /* AccordianTableView.m */; };
 		B73CBE5C15E2AB9500359E92 /* AccordianDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = B73CBE5B15E2AB9500359E92 /* AccordianDemo.m */; };
 		B779C86917B18120000E13B8 /* CTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B779C86817B18120000E13B8 /* CTextField.m */; };
 		B79EEB00159A044D00B2164F /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B79EEAE4159A044D00B2164F /* NSObject+SBJSON.m */; };
@@ -221,6 +224,10 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* WorkBench_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkBench_Prefix.pch; sourceTree = "<group>"; };
+		42006FB018828CBE00890E75 /* Playground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Playground.h; path = RAC/Playground.h; sourceTree = "<group>"; };
+		42006FB118828CBE00890E75 /* Playground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Playground.m; path = RAC/Playground.m; sourceTree = "<group>"; };
+		42006FB31882904800890E75 /* NoxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoxView.h; path = RAC/NoxView.h; sourceTree = "<group>"; };
+		42006FB41882904800890E75 /* NoxView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoxView.m; path = RAC/NoxView.m; sourceTree = "<group>"; };
 		42032058163D0EDB00F88151 /* Calendar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Calendar.plist; path = "Poster Animation/Calendar/Calendar.plist"; sourceTree = SOURCE_ROOT; };
 		42032059163D0EDB00F88151 /* CalendarDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarDayView.h; path = "Poster Animation/Calendar/CalendarDayView.h"; sourceTree = SOURCE_ROOT; };
 		4203205A163D0EDB00F88151 /* CalendarDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CalendarDayView.m; path = "Poster Animation/Calendar/CalendarDayView.m"; sourceTree = SOURCE_ROOT; };
@@ -438,6 +445,7 @@
 		42EA91C015CE1BD30017C73A /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		42EA91C215CE1BE70017C73A /* StringFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringFunctions.h; sourceTree = "<group>"; };
 		42EA91C315CE1BE70017C73A /* StringFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringFunctions.m; sourceTree = "<group>"; };
+		7CF3EFCC1029431CA37F9238 /* libPods-Workbench.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Workbench.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7113FB417B2C50500C7F466 /* GHCustomContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHCustomContainerView.h; sourceTree = "<group>"; };
 		B7113FB517B2C50500C7F466 /* GHCustomContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHCustomContainerView.m; sourceTree = "<group>"; };
 		B7113FB717B2C6AF00C7F466 /* UIColor+EliteKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+EliteKit.h"; sourceTree = "<group>"; };
@@ -482,8 +490,8 @@
 		B73CBE4015E2A62400359E92 /* ItemTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableCellView.h; sourceTree = "<group>"; };
 		B73CBE4115E2A62400359E92 /* ItemTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableCellView.m; sourceTree = "<group>"; };
 		B73CBE4215E2A62400359E92 /* ItemTableConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableConstants.h; sourceTree = "<group>"; };
-		B73CBE4315E2A62400359E92 /* AccordianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccordianViewController.h; sourceTree = "<group>"; };
-		B73CBE4415E2A62400359E92 /* AccordianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccordianViewController.m; sourceTree = "<group>"; };
+		B73CBE4315E2A62400359E92 /* AccordianTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccordianTableView.h; sourceTree = "<group>"; };
+		B73CBE4415E2A62400359E92 /* AccordianTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccordianTableView.m; sourceTree = "<group>"; };
 		B73CBE5A15E2AB9500359E92 /* AccordianDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccordianDemo.h; sourceTree = "<group>"; };
 		B73CBE5B15E2AB9500359E92 /* AccordianDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccordianDemo.m; sourceTree = "<group>"; };
 		B779C86717B18120000E13B8 /* CTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTextField.h; sourceTree = "<group>"; };
@@ -512,6 +520,7 @@
 		B7CDED3B17BED7F600BB0759 /* GHImageContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHImageContainerView.m; sourceTree = "<group>"; };
 		B7CDED4917C412C500BB0759 /* CustomDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDrawView.h; sourceTree = "<group>"; };
 		B7CDED4A17C412C500BB0759 /* CustomDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDrawView.m; sourceTree = "<group>"; };
+		DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workbench.xcconfig"; path = "Pods/Pods-Workbench.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -533,6 +542,7 @@
 				4268454912D5A443000B7A72 /* MessageUI.framework in Frameworks */,
 				4268454B12D5A443000B7A72 /* QuartzCore.framework in Frameworks */,
 				427DE27712E4F6FA000D1A37 /* OpenGLES.framework in Frameworks */,
+				618BFCD3B9C04F2C84668635 /* libPods-Workbench.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +567,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -602,8 +613,20 @@
 				4268454812D5A443000B7A72 /* MessageUI.framework */,
 				4268454A12D5A443000B7A72 /* QuartzCore.framework */,
 				427DE27612E4F6FA000D1A37 /* OpenGLES.framework */,
+				7CF3EFCC1029431CA37F9238 /* libPods-Workbench.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42006FAF18828C4A00890E75 /* RAC */ = {
+			isa = PBXGroup;
+			children = (
+				42006FB018828CBE00890E75 /* Playground.h */,
+				42006FB118828CBE00890E75 /* Playground.m */,
+				42006FB31882904800890E75 /* NoxView.h */,
+				42006FB41882904800890E75 /* NoxView.m */,
+			);
+			name = RAC;
 			sourceTree = "<group>";
 		};
 		42032056163D0D8400F88151 /* Calendar */ = {
@@ -687,6 +710,7 @@
 		427DD64D12D99B77000D1A37 /* Lessons */ = {
 			isa = PBXGroup;
 			children = (
+				42006FAF18828C4A00890E75 /* RAC */,
 				B73CBE2715E2A62400359E92 /* Tables */,
 				427DD64E12D99B77000D1A37 /* Animation */,
 				427DD65B12D99B77000D1A37 /* Drawing */,
@@ -949,8 +973,8 @@
 				B73CBE4015E2A62400359E92 /* ItemTableCellView.h */,
 				B73CBE4115E2A62400359E92 /* ItemTableCellView.m */,
 				B73CBE4215E2A62400359E92 /* ItemTableConstants.h */,
-				B73CBE4315E2A62400359E92 /* AccordianViewController.h */,
-				B73CBE4415E2A62400359E92 /* AccordianViewController.m */,
+				B73CBE4315E2A62400359E92 /* AccordianTableView.h */,
+				B73CBE4415E2A62400359E92 /* AccordianTableView.m */,
 			);
 			path = Accordian;
 			sourceTree = "<group>";
@@ -1054,9 +1078,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Workbench" */;
 			buildPhases = (
+				4B3B4EC8513D46639EC62892 /* Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				CAA593C5FEF046179DC65E27 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1205,6 +1231,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4B3B4EC8513D46639EC62892 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CAA593C5FEF046179DC65E27 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-Workbench-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1228,6 +1287,7 @@
 				427DD68712D99B77000D1A37 /* ShapeLayers.m in Sources */,
 				427DD68812D99B77000D1A37 /* TextLayers.m in Sources */,
 				427DD68C12D99B77000D1A37 /* StreamView.m in Sources */,
+				42006FB51882904800890E75 /* NoxView.m in Sources */,
 				42BDD14F17D3F27100BEC6B1 /* GHButton.m in Sources */,
 				427DD68F12D99B9F000D1A37 /* LessonPlan.m in Sources */,
 				42BDD15B17D4415200BEC6B1 /* SSRatingPicker.m in Sources */,
@@ -1250,6 +1310,7 @@
 				427719BB130A992B00A42982 /* Trackball.m in Sources */,
 				42771C47130B345800A42982 /* MotionAlongAPathView.m in Sources */,
 				4273D8401354E77F0090C7BE /* GlyphView.m in Sources */,
+				42006FB218828CBE00890E75 /* Playground.m in Sources */,
 				424393A113560347003D7F02 /* CoreTextView.m in Sources */,
 				42CD35CD1360D51500933199 /* TextLineView.m in Sources */,
 				42E55D631365C6DC00A1F387 /* CTLabel.m in Sources */,
@@ -1273,7 +1334,7 @@
 				B73CBE4B15E2A62400359E92 /* DetailTableViewCell.m in Sources */,
 				B73CBE5715E2A62400359E92 /* Item.m in Sources */,
 				B73CBE5815E2A62400359E92 /* ItemTableCellView.m in Sources */,
-				B73CBE5915E2A62400359E92 /* AccordianViewController.m in Sources */,
+				B73CBE5915E2A62400359E92 /* AccordianTableView.m in Sources */,
 				424365A2178CC71A0025505B /* BarberPole.m in Sources */,
 				B73CBE5C15E2AB9500359E92 /* AccordianDemo.m in Sources */,
 				42032064163D0EDC00F88151 /* CalendarDayView.m in Sources */,
@@ -1307,6 +1368,7 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1318,6 +1380,7 @@
 				GCC_PREFIX_HEADER = WorkBench_Prefix.pch;
 				INFOPLIST_FILE = "WorkBench-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = WorkBench;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
@@ -1325,6 +1388,7 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1333,6 +1397,7 @@
 				GCC_PREFIX_HEADER = WorkBench_Prefix.pch;
 				INFOPLIST_FILE = "WorkBench-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = WorkBench;
 				VALIDATE_PRODUCT = YES;
 			};

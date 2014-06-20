@@ -18,7 +18,7 @@
 
 + (NSString *)className 
 {
-	return @"Shadow Animation";
+	return @"Basic Animation";
 }
 
 - (id)initWithFrame:(CGRect)frame 
@@ -58,7 +58,7 @@
 - (void)setUpView 
 {
 //    self.backgroundColor  = [UIColor colorWithHexString:@"1b222b"];//[UIColor brownColor];
-	self.backgroundColor = [UIColor whiteColor ];
+	self.backgroundColor = [UIColor darkGrayColor ];
 //    UIImageView *cod = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"CODImage.png"]];
 //
 //    [self  addSubview:cod];
@@ -136,28 +136,29 @@
     
 
 
-    cellFrame = CGRectMake (50, 250, 500, 100);
+    cellFrame = CGRectMake (50, 250, 104, 72);
     self.gsView = [[GHCustomContainerLayer alloc] initWithFrame:cellFrame];
-    self.gsView.addTopLeftNotch = YES;
-    self.gsView.borderColor = [UIColor colorWithHexString:@"0x666666"];
+    self.gsView.addTopLeftNotch = NO;
+    self.gsView.borderColor = [UIColor colorWithHexString:@"0xFFFFFF"];
+    self.gsView.fillColor = [UIColor colorWithHexString:@"0xc5f1fd"];
     self.gsView.lineWidth = 1.0;
-    self.gsView.fillAlpha = 0.6;
-    self.gsView.shouldCreateGradient = YES;
-    self.gsView.addShadow = YES;
+    self.gsView.fillAlpha = 0.5;
+    self.gsView.shouldCreateGradient = NO;
+    self.gsView.addShadow = NO;
     [self addSubview:self.gsView];
     [self.gsView commit];
 	
-	cellFrame = CGRectMake (50, 450, 500, 210);
-	self.statsView = [[GHCustomContainerLayer alloc] initWithFrame:cellFrame];
-	self.statsView.addShadow = YES;
-    self.statsView.borderColor = [UIColor colorWithHexString:@"0x666666"];
-    self.statsView.lineWidth = 1.0;
-	self.statsView.fillAlpha = 0.6;
-    self.statsView.shouldCreateGradient = YES;
-	self.statsView.shadowRadius	= 4.0;
-	self.statsView.shadowOffset = CGSizeMake(0.0, 0.0);
-	[self addSubview:self.statsView];
-	[self.statsView commit];
+//	cellFrame = CGRectMake (50, 450, 500, 210);
+//	self.statsView = [[GHCustomContainerLayer alloc] initWithFrame:cellFrame];
+//	self.statsView.addShadow = YES;
+//    self.statsView.borderColor = [UIColor colorWithHexString:@"0x666666"];
+//    self.statsView.lineWidth = 1.0;
+//	self.statsView.fillAlpha = 0.6;
+//    self.statsView.shouldCreateGradient = NO;
+//	self.statsView.shadowRadius	= 4.0;
+//	self.statsView.shadowOffset = CGSizeMake(0.0, 0.0);
+//	[self addSubview:self.statsView];
+//	[self.statsView commit];
 
 /*
 	self.textView = [self textFieldAt:CGRectMake (100, 20, 274-15, 44)];

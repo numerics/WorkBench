@@ -1,4 +1,4 @@
 WorkBench
 =========
 
-A WorkBench of Objective-C, CALayer, and Core Animation.
+A work bench of Objective-C, iOS, CALayer, Core Animation, and ReactiveCocoa code

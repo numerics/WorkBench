@@ -1,9 +1,9 @@
 //
 //  CHLookAndFeelManager.m
-//  WorkBench
+//  ChinUp
 //
-//  Created by John Basile on 9/26/12.
-//  Copyright 2011 Numerics Software. All rights reserved.
+//  Created by Kailash Sharma on 12/01/11.
+//  Copyright 2011 Atimi Software. All rights reserved.
 //
 
 #import "CHLookAndFeelManager.h"

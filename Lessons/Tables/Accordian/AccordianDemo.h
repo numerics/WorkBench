@@ -8,13 +8,13 @@
 
 
 #import <UIKit/UIKit.h>
-#import "AccordianViewController.h"
+#import "AccordianTableView.h"
 
 @interface AccordianDemo : UIView
 {
-	AccordianViewController	*accordian;
+	AccordianTableView	*accordian;
 }
-@property (nonatomic, strong) AccordianViewController *accordian;
+@property (nonatomic, strong) AccordianTableView *accordian;
 
 - (void)setUpView; 
 

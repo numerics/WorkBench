@@ -10,8 +10,8 @@
 #import "CalendarLayoutView.h"
 #import "DateUtil.h"
 
-#define FRM_X	100                     // Main Frame/position where the calendar is set.
-#define FRM_Y	100
+#define FRM_X	0                     // Main Frame/position where the calendar is set.
+#define FRM_Y	0
 #define FRM_W	320
 #define FRM_H	366
 

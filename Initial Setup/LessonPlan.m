@@ -35,6 +35,8 @@
 #import "NUButtonView.h"
 #import "GHImageContainerView.h"
 #import "CustomDrawView.h"
+#import "Playground.h"
+#import "NoxView.h"
 
 @interface UIViewController (ThisIsHereToAviodACompilerWarning)
 
@@ -53,14 +55,15 @@
 	self = [super init];
 	if (self != nil) 
 	{
-		NSArray *geom = [NSArray arrayWithObjects:[StarFieldView class],[Geometry class], [TransformingLayers class], nil];
+//		NSString *ag = [Geometry class];
+		NSArray *geom = [NSArray arrayWithObjects:[Playground class],[NoxView class],[CustomDrawView class],[NUButtonView class],[AccordianDemo class],[Geometry class], [TransformingLayers class], nil];
 		NSArray *hier = [NSArray arrayWithObjects:[LayerTree class], [CalendarView class],nil];
 		NSArray *drawing = [NSArray arrayWithObjects:[LayerDrawing class], [StyleProperties class], nil];
-		NSArray *animation = [NSArray arrayWithObjects:[BasicAnimation class],  
+		NSArray *animation = [NSArray arrayWithObjects:[BasicAnimation class], [GHImageContainerView class],[AnimationGroups class], 
 							  [AnimationTransactions class], [KeyframeAnimation class], [MotionAlongAPathView class],
 							  [LayerTransitions class], [CustomPropertyAnimation class], nil];
-		NSArray *special = [NSArray arrayWithObjects:[ShapeLayers class], [AccordianDemo class], [GradientLayers class], [TextLayers class], nil];
-		NSArray *advanced = [NSArray arrayWithObjects:[AttentionEventAnimation class], [SceneAnimation class], [ReplicatorView class],
+		NSArray *special = [NSArray arrayWithObjects:[ShapeLayers class], [AdvancedShapeLayers class], [GradientLayers class], [TextLayers class], nil];
+		NSArray *advanced = [NSArray arrayWithObjects:[AttentionEventAnimation class], [SceneAnimation class], [StarFieldView class], [ReplicatorView class],
 							 [NanoSporesiPadView class],  [GeekBanner class],  [CoreTextView class], [ProgressBarTestView class],nil];
 		
 		
@@ -72,8 +75,7 @@
 				   @"Avanced Techniques",
 				   nil];
 		
-		Lessons = [[NSArray alloc] initWithObjects:geom, hier, drawing, animation, special, advanced, nil];
-		
+		Lessons = [[NSArray alloc] initWithObjects:geom, hier, drawing, animation, special, advanced, nil]; 
 	}
 	return self;
 }

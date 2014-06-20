@@ -1,8 +1,8 @@
 //
 //  DetailTableViewCell.m
 //
-//  Created by John Basile on 08/18/12.
-//  Copyright (c) 2012 Beachbody, LLC. All rights reserved.
+//  Created by John Basile on 8/20/12.
+//  Copyright 2012 Numerics. All rights reserved.
 //
 
 #import "DetailTableViewCell.h"
@@ -88,6 +88,8 @@
 	///*** When an action for an item is defined this will work ***///
 	if ([tg respondsToSelector:action])
 		 [tg performSelectorOnMainThread:action withObject:nil waitUntilDone:NO];
+    [tableView reloadData];
+
 }
 
 

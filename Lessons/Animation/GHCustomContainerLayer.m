@@ -11,6 +11,27 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIColor+EliteKit.h"
 
+static inline double radians (double degrees)
+{
+    return degrees * M_PI/180;
+}
+
+void MyDrawColoredPattern (void *info, CGContextRef context)
+{
+    UIColor * dotColor = [UIColor colorWithHue:0 saturation:0 brightness:0.07 alpha:1.0];
+    UIColor * shadowColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:0.1];
+    
+    CGContextSetFillColorWithColor(context, dotColor.CGColor);
+    CGContextSetShadowWithColor(context, CGSizeMake(0, 1), 1, shadowColor.CGColor);
+    
+//    CGContextAddArc(context, 3, 3, 2, 0, radians(360), 0);
+//    CGContextFillPath(context);
+    
+    CGContextAddRect(context, CGRectMake(3, 3, 2, 2));
+//    CGContextAddArc(context, 16, 16, 2, 0, radians(360), 0);
+    CGContextFillPath(context);
+}
+
 @implementation GHCustomContainerLayer
 {
     BOOL isHighlighting;
@@ -214,6 +235,104 @@
     
 }
 
+- (void) drawRect:(CGRect)rect
+{
+    CGFloat left = rect.origin.x;
+    CGFloat right = rect.origin.x + rect.size.width;
+    CGFloat top = rect.origin.y;
+    CGFloat bottom = rect.origin.y + rect.size.height;
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+
+    
+    [[UIColor whiteColor] setStroke];
+    
+    UIBezierPath *bpath = [UIBezierPath bezierPath];
+    [bpath moveToPoint:CGPointMake(left, top + self.notchSize)];
+    [bpath addLineToPoint:CGPointMake(left ,top)];
+    [bpath addLineToPoint:CGPointMake(left + self.notchSize ,top)];
+    
+    [bpath stroke];
+    
+    [bpath moveToPoint:CGPointMake(right - self.notchSize, top)];
+    [bpath addLineToPoint:CGPointMake(right ,top)];
+    [bpath addLineToPoint:CGPointMake(right,top + self.notchSize)];
+    [bpath stroke];
+    
+    [bpath moveToPoint:CGPointMake(right - self.notchSize, bottom)];
+    [bpath addLineToPoint:CGPointMake(right, bottom)];
+    [bpath addLineToPoint:CGPointMake(right, bottom - self.notchSize)];
+    [bpath stroke];
+    
+    [bpath moveToPoint:CGPointMake(left + self.notchSize, bottom)];
+    [bpath addLineToPoint:CGPointMake(left, bottom)];
+    [bpath addLineToPoint:CGPointMake(left, bottom - self.notchSize)];
+    [bpath stroke];
+    
+//    UIColor * bgColor = [UIColor colorWithHue:0 saturation:0 brightness:0.15 alpha:1.0];
+//    CGContextSetFillColorWithColor(context, bgColor.CGColor);
+//    CGContextFillRect(context, rect);
+    
+    static const CGPatternCallbacks callbacks = { 0, &MyDrawColoredPattern, NULL };
+    
+    CGContextSaveGState(context);
+    CGColorSpaceRef patternSpace = CGColorSpaceCreatePattern(NULL);
+    CGContextSetFillColorSpace(context, patternSpace);
+    CGColorSpaceRelease(patternSpace);
+    
+    CGPatternRef pattern = CGPatternCreate(NULL,
+                                           CGRectInset(rect, 3.0, 3.0),
+                                           CGAffineTransformIdentity,
+                                           6,
+                                           6,
+                                           kCGPatternTilingConstantSpacing,
+                                           true,
+                                           &callbacks);
+    CGFloat alpha = 1.0;
+    CGContextSetFillPattern(context, pattern, &alpha);
+    CGPatternRelease(pattern);
+    CGContextFillRect(context, CGRectInset(rect, 4.0, 4.0));
+    CGContextRestoreGState(context);
+    
+
+}
+
+-(CGMutablePathRef)createFrame:(CGRect)rect
+{
+    CGFloat left = rect.origin.x;
+//    CGFloat right = rect.origin.x + rect.size.width;
+    CGFloat top = rect.origin.y;
+//    CGFloat bottom = rect.origin.y + rect.size.height;
+    
+    CGMutablePathRef path = CGPathCreateMutable();
+    CGPathMoveToPoint(path, NULL, left , top + self.notchSize);
+    CGPathAddRect(path, NULL, CGRectInset(rect, 3.0, 3.0));
+    
+//    UIBezierPath *bpath = [UIBezierPath bezierPath];
+//    [bpath moveToPoint:CGPointMake(left, top + self.notchSize)];
+//    [bpath addLineToPoint:CGPointMake(left ,top)];
+//    [bpath addLineToPoint:CGPointMake(left + self.notchSize ,top)];
+//    [bpath stroke];
+//    
+//    [bpath moveToPoint:CGPointMake(right - self.notchSize, top)];
+//    [bpath addLineToPoint:CGPointMake(right ,top)];
+//    [bpath addLineToPoint:CGPointMake(right,top + self.notchSize)];
+//    [bpath stroke];
+//    
+//    [bpath moveToPoint:CGPointMake(right - self.notchSize, bottom)];
+//    [bpath addLineToPoint:CGPointMake(right, bottom)];
+//    [bpath addLineToPoint:CGPointMake(right, bottom - self.notchSize)];
+//    [bpath stroke];
+//    
+//    [bpath moveToPoint:CGPointMake(left + self.notchSize, bottom)];
+//    [bpath addLineToPoint:CGPointMake(left, bottom)];
+//    [bpath addLineToPoint:CGPointMake(left, bottom - self.notchSize)];
+//    [bpath stroke];
+    
+    return path;
+    
+}
+/*
 -(CGMutablePathRef)createFrame:(CGRect)rect
 {
     CGFloat left = rect.origin.x;
@@ -247,7 +366,7 @@
     CGPathCloseSubpath(path);
     return path;
 }
-
+*/
 
 - (void) commit
 {
@@ -334,13 +453,5 @@
 }
 
 
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect
- {
- // Drawing code
- }
- */
 
 @end

@@ -7,13 +7,16 @@ PODS:
   - ReactiveCocoa/no-arc (2.1.8)
   - ReactiveViewModel (0.1.1):
     - ReactiveCocoa (~> 2.1)
+  - Reveal-iOS-SDK (1.0.4)
 
 DEPENDENCIES:
   - ReactiveCocoa (= 2.1.8)
   - ReactiveViewModel (= 0.1.1)
+  - Reveal-iOS-SDK
 
 SPEC CHECKSUMS:
-  ReactiveCocoa: 0db710a0afa1c627a64470e5c912a3870d4854ae
-  ReactiveViewModel: e6cba4e138cfdaac19ea326bf42f6d6a61245f2c
+  ReactiveCocoa: 399d3ad0c8ac73d79bed5bcd076a04f46ec635fc
+  ReactiveViewModel: 5a678d4f2cb7b6f7f60b10f58c37e30f9db684a2
+  Reveal-iOS-SDK: d3c8e109d42219daaa7a6e1ad2de34f0bdbb7a88
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1

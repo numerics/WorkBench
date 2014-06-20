@@ -199,7 +199,7 @@
 		B73CBE5615E2A62400359E92 /* icon-triangle-up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B73CBE3D15E2A62400359E92 /* icon-triangle-up@2x.png */; };
 		B73CBE5715E2A62400359E92 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = B73CBE3F15E2A62400359E92 /* Item.m */; };
 		B73CBE5815E2A62400359E92 /* ItemTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73CBE4115E2A62400359E92 /* ItemTableCellView.m */; };
-		B73CBE5915E2A62400359E92 /* AccordianViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B73CBE4415E2A62400359E92 /* AccordianViewController.m */; };
+		B73CBE5915E2A62400359E92 /* AccordianTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B73CBE4415E2A62400359E92 /* AccordianTableView.m */; };
 		B73CBE5C15E2AB9500359E92 /* AccordianDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = B73CBE5B15E2AB9500359E92 /* AccordianDemo.m */; };
 		B779C86917B18120000E13B8 /* CTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B779C86817B18120000E13B8 /* CTextField.m */; };
 		B79EEB00159A044D00B2164F /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B79EEAE4159A044D00B2164F /* NSObject+SBJSON.m */; };
@@ -490,8 +490,8 @@
 		B73CBE4015E2A62400359E92 /* ItemTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableCellView.h; sourceTree = "<group>"; };
 		B73CBE4115E2A62400359E92 /* ItemTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableCellView.m; sourceTree = "<group>"; };
 		B73CBE4215E2A62400359E92 /* ItemTableConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableConstants.h; sourceTree = "<group>"; };
-		B73CBE4315E2A62400359E92 /* AccordianViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccordianViewController.h; sourceTree = "<group>"; };
-		B73CBE4415E2A62400359E92 /* AccordianViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccordianViewController.m; sourceTree = "<group>"; };
+		B73CBE4315E2A62400359E92 /* AccordianTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccordianTableView.h; sourceTree = "<group>"; };
+		B73CBE4415E2A62400359E92 /* AccordianTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccordianTableView.m; sourceTree = "<group>"; };
 		B73CBE5A15E2AB9500359E92 /* AccordianDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccordianDemo.h; sourceTree = "<group>"; };
 		B73CBE5B15E2AB9500359E92 /* AccordianDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccordianDemo.m; sourceTree = "<group>"; };
 		B779C86717B18120000E13B8 /* CTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTextField.h; sourceTree = "<group>"; };
@@ -973,8 +973,8 @@
 				B73CBE4015E2A62400359E92 /* ItemTableCellView.h */,
 				B73CBE4115E2A62400359E92 /* ItemTableCellView.m */,
 				B73CBE4215E2A62400359E92 /* ItemTableConstants.h */,
-				B73CBE4315E2A62400359E92 /* AccordianViewController.h */,
-				B73CBE4415E2A62400359E92 /* AccordianViewController.m */,
+				B73CBE4315E2A62400359E92 /* AccordianTableView.h */,
+				B73CBE4415E2A62400359E92 /* AccordianTableView.m */,
 			);
 			path = Accordian;
 			sourceTree = "<group>";
@@ -1334,7 +1334,7 @@
 				B73CBE4B15E2A62400359E92 /* DetailTableViewCell.m in Sources */,
 				B73CBE5715E2A62400359E92 /* Item.m in Sources */,
 				B73CBE5815E2A62400359E92 /* ItemTableCellView.m in Sources */,
-				B73CBE5915E2A62400359E92 /* AccordianViewController.m in Sources */,
+				B73CBE5915E2A62400359E92 /* AccordianTableView.m in Sources */,
 				424365A2178CC71A0025505B /* BarberPole.m in Sources */,
 				B73CBE5C15E2AB9500359E92 /* AccordianDemo.m in Sources */,
 				42032064163D0EDC00F88151 /* CalendarDayView.m in Sources */,
@@ -1380,6 +1380,7 @@
 				GCC_PREFIX_HEADER = WorkBench_Prefix.pch;
 				INFOPLIST_FILE = "WorkBench-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = WorkBench;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 			};
@@ -1396,6 +1397,7 @@
 				GCC_PREFIX_HEADER = WorkBench_Prefix.pch;
 				INFOPLIST_FILE = "WorkBench-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = WorkBench;
 				VALIDATE_PRODUCT = YES;
 			};

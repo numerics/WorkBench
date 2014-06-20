@@ -1,8 +1,8 @@
 //
 //  DetailItem.m
 //
-//  Created by John Basile on 08/18/12.
-//  Copyright (c) 2012 Beachbody, LLC. All rights reserved.
+//  Created by John Basile on 8/20/12.
+//  Copyright 2012 Numerics. All rights reserved.
 //
 
 #import "DetailItem.h"

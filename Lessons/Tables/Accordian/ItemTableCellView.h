@@ -1,8 +1,8 @@
 //
 //  ItemTableCellView.h
 //
-//  Created by John Basile on 08/18/12.
-//  Copyright (c) 2012 Beachbody, LLC. All rights reserved.
+//  Created by John Basile on 8/20/12.
+//  Copyright 2012 Numerics. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -21,10 +21,13 @@
 	CGFloat						originalTitleY;
 }
 
-@property (nonatomic,retain)	Item	*item;
-@property (nonatomic,assign)	BOOL	expanded;
+@property (nonatomic,strong)	Item        *item;
+@property (nonatomic,assign)	BOOL        expanded;
+@property (nonatomic,strong)    UILabel     *detailLabel;
+@property (nonatomic,strong)    UILabel     *titleLabel;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
+
 - (void)setExpanded:(BOOL)e;
 
 @end

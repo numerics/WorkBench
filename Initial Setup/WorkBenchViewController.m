@@ -71,13 +71,15 @@
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
+   // NSLog( @"TouchView = %@", NSStringFromClass([touch.view class]) );
+    BOOL btnP = ![NSStringFromClass([touch.view class]) isEqualToString:@"PieView"];
     BOOL btnS = ![NSStringFromClass([touch.view class]) isEqualToString:@"UIButton"];
     BOOL btnT = ![NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"];
     BOOL btnCD = ![NSStringFromClass([touch.view class]) isEqualToString:@"CalendarDayView"];
     BOOL btnCY = ![NSStringFromClass([touch.view class]) isEqualToString:@"CalendarLayoutView"];
     BOOL btnCV = ![NSStringFromClass([touch.view class]) isEqualToString:@"CalendarView"];
     
-    if( !btnS || !btnT || !btnCD || !btnCY || !btnCV )
+    if( !btnS || !btnT || !btnCD || !btnCY || !btnCV || !btnP)
         return NO;
     else
         return YES;

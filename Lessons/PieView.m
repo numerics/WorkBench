@@ -58,10 +58,10 @@
 @synthesize centerImage;		//Tanoi-011210
 @synthesize innerWheelColor;	//Tanoi-011910
 
-//BOOL imageNOTDrawn = YES;
-
-- (id)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
+- (id)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame])
+    {
         // Initialization code
 		[self initData];
     }
@@ -78,27 +78,9 @@
 	[self initGradients];
 	selectedItem = kNoItemSelected;
 	
-//	centerImage = nil; //In case of failure. Tanoi-011210
-//	centerImage = [UIImage imageNamed:@"Icon.png"];//Tanoi-011210
-	
 	self.backgroundColor = [UIColor clearColor];
 	[self setLeftHanded:self.leftHanded];
 }
-
-/*
-//Tanoi-011210 This will be called in PieMenu
--(void)loadCenterImage:(NSString *)imageName
-{
-	centerImage = nil; //In case of failure.
-	centerImage = [UIImage imageNamed:imageName];
-	
-	if(centerImage != nil)
-	{
-		CGSize imageSize = [centerImage size];
-		NSLog(@"ImageSize: %5.2f,%5.2f%",imageSize.width,imageSize.height);//Tanoi-011210
-	}
-}
-*/
 
 - (void) setLeftHanded:(BOOL)isLeftHanded
 {
@@ -113,7 +95,6 @@
 		initAngle = kStartAngle;
 		endAngle = kEndAngle;
 	}
-	
 }
 
 - (CGFloat) minimumSize
@@ -297,8 +278,6 @@
 	myColor = nil;
 	if(innerWheelColor != nil) //Tanoi-011910 - Change background color
 	{
-		//myColorSpace = CGColorSpaceCreateDeviceRGB ();
-		//myColor = CGColorCreate (myColorSpace, zeColorValues);
 		myColor =  [innerWheelColor CGColor];
 	}
 	
@@ -331,36 +310,16 @@
 	
 	imagePoint = CGPointMake( (inneRect.origin.x+inneRect.size.width/2.0), (inneRect.origin.y+inneRect.size.height/2.0));//Tanoi-011210
 	
-//	CGMutablePathRef path = [self getPathForRect:CGRectMake(center.x - kRoundedRectRadius, center.y - kRoundedRectRadius, kRoundedRectRadius * 2.0, kRoundedRectRadius * 2.0)];
-/*
-	CGContextAddPath(context, path);
-    CGContextDrawPath(context, kCGPathStroke);
-//	CGPathRelease(path);
-*/	
-	//	if (imageNOTDrawn && centerImage != nil)) {
 	if (centerImage != nil)
 	{
-//		imageNOTDrawn = NO;
 		CGSize imageSize = [centerImage size];
 		CGRect imageFrame;
 		imageFrame = CGRectMake( (imagePoint.x-imageSize.width/2.0), (imagePoint.y-imageSize.height/2.0), imageSize.width, imageSize.height);
 		
 		CGContextSaveGState(context);
 		[centerImage drawInRect:imageFrame blendMode:kCGBlendModeScreen alpha:1.0];
-//		[centerImage drawInRect:imageFrame];
 		CGContextRestoreGState(context);
-	} 
-		
-/*	
-	if (previmage != nil) 
-    {
-		NSLog(@"previmage is NOT nil, imagePoint:%.2f, %.2f",imagePoint.x,imagePoint.y);//Tanoi-011210
-		CGContextSaveGState(context);
-		CGContextScaleCTM(context, 1.2, 1.2);
-		[previmage drawAtPoint:imagePoint];
-		CGContextRestoreGState(context);
-	} else 	NSLog(@"previmage IS nil, imagePoint:%.2f, %.2f\n\n",imagePoint.x,imagePoint.y);//Tanoi-011210
-*/
+	}
 }
 
 
@@ -386,9 +345,6 @@
 {
 	CGGradientRelease(bggradient);
 	CGGradientRelease(selgradient);
-	for (int i = 0; i < n_items; i++)
-	{
-	}
 }
 
 

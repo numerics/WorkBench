@@ -60,23 +60,28 @@
 	}
 }
 
-- (void) addSubItem:(PieMenuItem *)theSubItem {
-	if (theSubItem == nil) {
+- (void) addSubItem:(PieMenuItem *)theSubItem
+{
+	if (theSubItem == nil)
+    {
 		NSException *exception = [NSException exceptionWithName:@"NSInvalidArgumentException"
 														 reason:@"the item suplied is nil"  userInfo:nil];
 		@throw exception;
 	}
-	if ([subItems count] >= kMaxNumberOfSubitems) {
+	if ([subItems count] >= kMaxNumberOfSubitems)
+    {
 		NSException *exception = [NSException exceptionWithName:@"RangeException"
 														 reason:@"maximus number of subitems reached"  userInfo:nil];
 		@throw exception;
 	}
-	if ([subItems indexOfObject:theSubItem] != NSNotFound) {
+	if ([subItems indexOfObject:theSubItem] != NSNotFound)
+    {
 		NSException *exception = [NSException exceptionWithName:@"DuplicatedItemException"
 														 reason:@"the item is allready a subitem"  userInfo:nil];
 		@throw exception;
 	}
-	if (theSubItem.parentItem != nil && theSubItem.parentItem != self) {
+	if (theSubItem.parentItem != nil && theSubItem.parentItem != self)
+    {
 		NSException *exception = [NSException exceptionWithName:@"ItemParentException"
 														 reason:@"the item is a subitem of another item"  userInfo:nil];
 		@throw exception;
@@ -92,23 +97,29 @@
 	self.type = PieMenuItemTypeParent;
 }
 
-- (BOOL) hasSubitems {
+- (BOOL) hasSubitems
+{
 	return [subItems count] > 0;
 }
 
-- (NSUInteger) numberOfSubitems {
+- (NSUInteger) numberOfSubitems
+{
 	return [subItems count];
 }
 
-- (PieMenuItem *) subitemAtIndex:(NSInteger)theIndex {
-	if (theIndex >= 0 && theIndex < [subItems count]) {
+- (PieMenuItem *) subitemAtIndex:(NSInteger)theIndex
+{
+	if (theIndex >= 0 && theIndex < [subItems count])
+    {
 		return [subItems objectAtIndex:theIndex];
 	}
 	return nil;
 }
 
-- (NSInteger) indexInParent {
-	if (parentItem != nil) {
+- (NSInteger) indexInParent
+{
+	if (parentItem != nil)
+    {
 		return [parentItem.subItems indexOfObject:self];
 	}
 	return NSNotFound;

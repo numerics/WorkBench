@@ -42,5 +42,4 @@
 - (void) clearItems;
 - (CGFloat) minimumSize;
 
-//- (void) loadCenterImage:(NSString *)imageName;//Tanoi-011210
 @end

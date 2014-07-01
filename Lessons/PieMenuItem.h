@@ -17,7 +17,8 @@ typedef enum {
 	PieMenuItemTypeParent,
 } PieMenuItemType;
 
-@interface PieMenuItem : NSObject {
+@interface PieMenuItem : NSObject
+{
 	NSString *title;
 	NSString *label;
 	id target;
@@ -45,6 +46,7 @@ typedef enum {
             selector:(SEL)theSelector
 			userInfo:(id)theInfo
 				icon:(UIImage *)theIcon;
+
 - (void) addSubItem:(PieMenuItem *)theSubItem;
 - (BOOL) hasSubitems;
 - (NSUInteger) numberOfSubitems;

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DetailedLayer.h"
+#import "PieView.h"
 
 
 @interface StyleProperties : UIView 
@@ -15,11 +16,28 @@
 	CALayer		*simpleLayer;
 	CAShapeLayer		*maskLayer;
 	
-	UIButton		*roundCornersButton;
-	UIButton		*toggleBorderButton;
-	UIButton		*toggleOpacityButton;
-	UIButton		*toggleMaskButton;
+	UISlider            *Alpha;         // Opacity Slider
+	UISlider            *redC;			// Red Color Slider
+	UISlider            *greenC;		// green Color Slider
+	UISlider            *blueC;			// blue Color Slider
+	
+    UILabel		*redLabel;
+    UILabel		*greenLabel;
+    UILabel		*blueLabel;
+	
+	
 }
+
+@property(nonatomic) CGFloat opacity;
+@property(nonatomic) CGFloat redValue;
+@property(nonatomic) CGFloat greenValue;
+@property(nonatomic) CGFloat blueValue;
+
+@property(nonatomic) UILabel *alphaLabel;
+
+@property (nonatomic,strong)	PieMenu *pieMenu;
+
 - (void)setUpView; 
+- (void)setupPieMenu;
 
 @end

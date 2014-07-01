@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CKLabel.h"
-#import "CKCustomButtonControl.h"
+#import "CKDynamicButton.h"
 
 @class MenuCell;
 @class MenuButton;
@@ -80,7 +80,7 @@ typedef enum
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-@interface MenuButton : CKCustomButtonControl
+@interface MenuButton : CKDynamicButton
 
 
 @property (nonatomic, strong) UIImageView       *iconImage;

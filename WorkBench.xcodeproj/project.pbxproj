@@ -18,6 +18,14 @@
 		424365A1178CC71A0025505B /* StripeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4243659D178CC71A0025505B /* StripeLayer.m */; };
 		424365A2178CC71A0025505B /* BarberPole.m in Sources */ = {isa = PBXBuildFile; fileRef = 4243659E178CC71A0025505B /* BarberPole.m */; };
 		424393A113560347003D7F02 /* CoreTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 424393A013560347003D7F02 /* CoreTextView.m */; };
+		425A342B195544CA008352D4 /* BFSoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 425A3424195544CA008352D4 /* BFSoundEffect.m */; };
+		425A342C195544CA008352D4 /* PieMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 425A3426195544CA008352D4 /* PieMenu.m */; };
+		425A342D195544CA008352D4 /* PieMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 425A3428195544CA008352D4 /* PieMenuItem.m */; };
+		425A342E195544CA008352D4 /* PieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 425A342A195544CA008352D4 /* PieView.m */; };
+		425A3430195546B9008352D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 425A342F195546B9008352D4 /* AudioToolbox.framework */; };
+		425A3435195553FC008352D4 /* miss.wav in Resources */ = {isa = PBXBuildFile; fileRef = 425A3433195553FC008352D4 /* miss.wav */; };
+		425A3436195553FC008352D4 /* tick.wav in Resources */ = {isa = PBXBuildFile; fileRef = 425A3434195553FC008352D4 /* tick.wav */; };
+		425A3438195562E3008352D4 /* centerLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 425A3437195562E3008352D4 /* centerLogo@2x.png */; };
 		4268453D12D5A443000B7A72 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4268453C12D5A443000B7A72 /* CoreFoundation.framework */; };
 		4268453F12D5A443000B7A72 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4268453E12D5A443000B7A72 /* CoreLocation.framework */; };
 		4268454112D5A443000B7A72 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4268454012D5A443000B7A72 /* CoreMotion.framework */; };
@@ -28,6 +36,9 @@
 		4268454B12D5A443000B7A72 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4268454A12D5A443000B7A72 /* QuartzCore.framework */; };
 		426F5B951660A1D60028C38A /* GeekDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 426F5B941660A1D60028C38A /* GeekDot.m */; };
 		426F5B9E1660AFE40028C38A /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 426F5B9D1660AFE40028C38A /* CoreImage.framework */; };
+		4272BE25195EAEE600A0FB33 /* CKShareButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4272BE24195EAEE600A0FB33 /* CKShareButton.m */; };
+		4272BE28195F34DD00A0FB33 /* CKHeartButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4272BE27195F34DD00A0FB33 /* CKHeartButton.m */; };
+		4272BE2B195F34F600A0FB33 /* CKCommentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4272BE2A195F34F600A0FB33 /* CKCommentButton.m */; };
 		4273D8401354E77F0090C7BE /* GlyphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4273D83F1354E77F0090C7BE /* GlyphView.m */; };
 		42771838130A72A900A42982 /* ReplicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 42771837130A72A900A42982 /* ReplicatorView.m */; };
 		427718B9130A7F9100A42982 /* NanoSporesiPadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 427718B6130A7F9100A42982 /* NanoSporesiPadView.m */; };
@@ -124,7 +135,7 @@
 		520C8AD51954C662006F7CBE /* CKPopTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C8AB01954C662006F7CBE /* CKPopTableView.m */; };
 		520C8AD61954C662006F7CBE /* CKCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C8AB21954C662006F7CBE /* CKCustomButton.m */; };
 		520C8AD71954C662006F7CBE /* CKRectangleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C8AB41954C662006F7CBE /* CKRectangleButton.m */; };
-		520C8AD81954C662006F7CBE /* CKCustomButtonControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C8AB61954C662006F7CBE /* CKCustomButtonControl.m */; };
+		520C8AD81954C662006F7CBE /* CKDynamicButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C8AB61954C662006F7CBE /* CKDynamicButton.m */; };
 		520C8AD91954C662006F7CBE /* CKNotchedContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C8AB81954C662006F7CBE /* CKNotchedContainerView.m */; };
 		520C8ADA1954C662006F7CBE /* CKButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C8ABA1954C662006F7CBE /* CKButton.m */; };
 		520C8ADB1954C662006F7CBE /* CKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 520C8ABC1954C662006F7CBE /* CKLabel.m */; };
@@ -178,7 +189,6 @@
 		B779C86917B18120000E13B8 /* CTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B779C86817B18120000E13B8 /* CTextField.m */; };
 		B7C49A171598DDE7001CB848 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C49A161598DDE7001CB848 /* libsqlite3.dylib */; };
 		B7CDED3C17BED7F600BB0759 /* GHImageContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CDED3B17BED7F600BB0759 /* GHImageContainerView.m */; };
-		B7CDED4B17C412C600BB0759 /* CustomDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = B7CDED4A17C412C500BB0759 /* CustomDrawView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,6 +211,18 @@
 		424365A0178CC71A0025505B /* StripeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StripeLayer.h; sourceTree = "<group>"; };
 		4243939F13560347003D7F02 /* CoreTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTextView.h; sourceTree = "<group>"; };
 		424393A013560347003D7F02 /* CoreTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreTextView.m; sourceTree = "<group>"; };
+		425A3423195544CA008352D4 /* BFSoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BFSoundEffect.h; sourceTree = "<group>"; };
+		425A3424195544CA008352D4 /* BFSoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BFSoundEffect.m; sourceTree = "<group>"; };
+		425A3425195544CA008352D4 /* PieMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieMenu.h; sourceTree = "<group>"; };
+		425A3426195544CA008352D4 /* PieMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieMenu.m; sourceTree = "<group>"; };
+		425A3427195544CA008352D4 /* PieMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieMenuItem.h; sourceTree = "<group>"; };
+		425A3428195544CA008352D4 /* PieMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieMenuItem.m; sourceTree = "<group>"; };
+		425A3429195544CA008352D4 /* PieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieView.h; sourceTree = "<group>"; };
+		425A342A195544CA008352D4 /* PieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieView.m; sourceTree = "<group>"; };
+		425A342F195546B9008352D4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		425A3433195553FC008352D4 /* miss.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = miss.wav; sourceTree = "<group>"; };
+		425A3434195553FC008352D4 /* tick.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = tick.wav; sourceTree = "<group>"; };
+		425A3437195562E3008352D4 /* centerLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "centerLogo@2x.png"; sourceTree = "<group>"; };
 		4268453C12D5A443000B7A72 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		4268453E12D5A443000B7A72 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4268454012D5A443000B7A72 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -212,6 +234,12 @@
 		426F5B931660A1D60028C38A /* GeekDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeekDot.h; sourceTree = "<group>"; };
 		426F5B941660A1D60028C38A /* GeekDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeekDot.m; sourceTree = "<group>"; };
 		426F5B9D1660AFE40028C38A /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		4272BE23195EAEE600A0FB33 /* CKShareButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKShareButton.h; sourceTree = "<group>"; };
+		4272BE24195EAEE600A0FB33 /* CKShareButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKShareButton.m; sourceTree = "<group>"; };
+		4272BE26195F34DD00A0FB33 /* CKHeartButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKHeartButton.h; sourceTree = "<group>"; };
+		4272BE27195F34DD00A0FB33 /* CKHeartButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKHeartButton.m; sourceTree = "<group>"; };
+		4272BE29195F34F600A0FB33 /* CKCommentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCommentButton.h; sourceTree = "<group>"; };
+		4272BE2A195F34F600A0FB33 /* CKCommentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCommentButton.m; sourceTree = "<group>"; };
 		4273D83E1354E77F0090C7BE /* GlyphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlyphView.h; sourceTree = "<group>"; };
 		4273D83F1354E77F0090C7BE /* GlyphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlyphView.m; sourceTree = "<group>"; };
 		42771836130A72A900A42982 /* ReplicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplicatorView.h; sourceTree = "<group>"; };
@@ -360,8 +388,8 @@
 		520C8AB21954C662006F7CBE /* CKCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCustomButton.m; sourceTree = "<group>"; };
 		520C8AB31954C662006F7CBE /* CKRectangleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKRectangleButton.h; sourceTree = "<group>"; };
 		520C8AB41954C662006F7CBE /* CKRectangleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKRectangleButton.m; sourceTree = "<group>"; };
-		520C8AB51954C662006F7CBE /* CKCustomButtonControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCustomButtonControl.h; sourceTree = "<group>"; };
-		520C8AB61954C662006F7CBE /* CKCustomButtonControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCustomButtonControl.m; sourceTree = "<group>"; };
+		520C8AB51954C662006F7CBE /* CKDynamicButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKDynamicButton.h; sourceTree = "<group>"; };
+		520C8AB61954C662006F7CBE /* CKDynamicButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKDynamicButton.m; sourceTree = "<group>"; };
 		520C8AB71954C662006F7CBE /* CKNotchedContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKNotchedContainerView.h; sourceTree = "<group>"; };
 		520C8AB81954C662006F7CBE /* CKNotchedContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKNotchedContainerView.m; sourceTree = "<group>"; };
 		520C8AB91954C662006F7CBE /* CKButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKButton.h; sourceTree = "<group>"; };
@@ -453,8 +481,6 @@
 		B7C49A161598DDE7001CB848 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B7CDED3A17BED7F600BB0759 /* GHImageContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHImageContainerView.h; sourceTree = "<group>"; };
 		B7CDED3B17BED7F600BB0759 /* GHImageContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHImageContainerView.m; sourceTree = "<group>"; };
-		B7CDED4917C412C500BB0759 /* CustomDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDrawView.h; sourceTree = "<group>"; };
-		B7CDED4A17C412C500BB0759 /* CustomDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDrawView.m; sourceTree = "<group>"; };
 		DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workbench.xcconfig"; path = "Pods/Pods-Workbench.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -463,6 +489,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425A3430195546B9008352D4 /* AudioToolbox.framework in Frameworks */,
 				426F5B9E1660AFE40028C38A /* CoreImage.framework in Frameworks */,
 				B7C49A171598DDE7001CB848 /* libsqlite3.dylib in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -521,6 +548,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				425A3437195562E3008352D4 /* centerLogo@2x.png */,
 				42BDD16317D442C700BEC6B1 /* gray-star.png */,
 				42BDD16417D442C700BEC6B1 /* gray-star@2x.png */,
 				42BDD16517D442C700BEC6B1 /* orange-star.png */,
@@ -540,6 +568,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				425A342F195546B9008352D4 /* AudioToolbox.framework */,
 				426F5B9D1660AFE40028C38A /* CoreImage.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -567,6 +596,23 @@
 				42006FB41882904800890E75 /* NoxView.m */,
 			);
 			name = RAC;
+			sourceTree = "<group>";
+		};
+		425A342219554485008352D4 /* PieMenu */ = {
+			isa = PBXGroup;
+			children = (
+				425A3423195544CA008352D4 /* BFSoundEffect.h */,
+				425A3424195544CA008352D4 /* BFSoundEffect.m */,
+				425A3425195544CA008352D4 /* PieMenu.h */,
+				425A3426195544CA008352D4 /* PieMenu.m */,
+				425A3427195544CA008352D4 /* PieMenuItem.h */,
+				425A3428195544CA008352D4 /* PieMenuItem.m */,
+				425A3429195544CA008352D4 /* PieView.h */,
+				425A342A195544CA008352D4 /* PieView.m */,
+				425A3433195553FC008352D4 /* miss.wav */,
+				425A3434195553FC008352D4 /* tick.wav */,
+			);
+			name = PieMenu;
 			sourceTree = "<group>";
 		};
 		4268456312D5A947000B7A72 /* Images */ = {
@@ -626,6 +672,7 @@
 		427DD64D12D99B77000D1A37 /* Lessons */ = {
 			isa = PBXGroup;
 			children = (
+				425A342219554485008352D4 /* PieMenu */,
 				42006FAF18828C4A00890E75 /* RAC */,
 				B73CBE2715E2A62400359E92 /* Tables */,
 				427DD64E12D99B77000D1A37 /* Animation */,
@@ -684,8 +731,6 @@
 				427DD65F12D99B77000D1A37 /* LayerDrawing.m */,
 				427DD66012D99B77000D1A37 /* StyleProperties.h */,
 				427DD66112D99B77000D1A37 /* StyleProperties.m */,
-				B7CDED4917C412C500BB0759 /* CustomDrawView.h */,
-				B7CDED4A17C412C500BB0759 /* CustomDrawView.m */,
 				B7CDED3A17BED7F600BB0759 /* GHImageContainerView.h */,
 				B7CDED3B17BED7F600BB0759 /* GHImageContainerView.m */,
 				B714626517A9A23200B59630 /* DrawView.h */,
@@ -813,8 +858,14 @@
 				520C8AB21954C662006F7CBE /* CKCustomButton.m */,
 				520C8AB31954C662006F7CBE /* CKRectangleButton.h */,
 				520C8AB41954C662006F7CBE /* CKRectangleButton.m */,
-				520C8AB51954C662006F7CBE /* CKCustomButtonControl.h */,
-				520C8AB61954C662006F7CBE /* CKCustomButtonControl.m */,
+				4272BE23195EAEE600A0FB33 /* CKShareButton.h */,
+				4272BE24195EAEE600A0FB33 /* CKShareButton.m */,
+				4272BE26195F34DD00A0FB33 /* CKHeartButton.h */,
+				4272BE27195F34DD00A0FB33 /* CKHeartButton.m */,
+				4272BE29195F34F600A0FB33 /* CKCommentButton.h */,
+				4272BE2A195F34F600A0FB33 /* CKCommentButton.m */,
+				520C8AB51954C662006F7CBE /* CKDynamicButton.h */,
+				520C8AB61954C662006F7CBE /* CKDynamicButton.m */,
 				520C8AB71954C662006F7CBE /* CKNotchedContainerView.h */,
 				520C8AB81954C662006F7CBE /* CKNotchedContainerView.m */,
 				520C8AB91954C662006F7CBE /* CKButton.h */,
@@ -1018,6 +1069,7 @@
 				427DD68B12D99B77000D1A37 /* livestream_offSM.png in Resources */,
 				42771C9E130B3F0E00A42982 /* icon.png in Resources */,
 				42E55D851365E61D00A1F387 /* ClvTextBold_106_jd.ttf in Resources */,
+				425A3435195553FC008352D4 /* miss.wav in Resources */,
 				42BDD16717D442C700BEC6B1 /* gray-star.png in Resources */,
 				4289EB83186598F500EE520E /* Eurostile-HeaIta.otf in Resources */,
 				4289EB8B186598F500EE520E /* EurostileCon-Reg_0.otf in Resources */,
@@ -1025,6 +1077,7 @@
 				42E55D861365E61D00A1F387 /* ClvTextBook_106_jd.ttf in Resources */,
 				4289EB84186598F500EE520E /* Eurostile-Med.otf in Resources */,
 				42E55D871365E61D00A1F387 /* ClvTextLight_106_jd.ttf in Resources */,
+				425A3438195562E3008352D4 /* centerLogo@2x.png in Resources */,
 				42E55D881365E61D00A1F387 /* ClvTextMedium_106_jd.ttf in Resources */,
 				4289EB8A186598F500EE520E /* EurostileCon-HeaIta_0.otf in Resources */,
 				42E55D891365E61D00A1F387 /* ClvTextMedium_Italic_106_jd.ttf in Resources */,
@@ -1049,6 +1102,7 @@
 				B73CBE5115E2A62400359E92 /* home-icon-preinterview.png in Resources */,
 				B73CBE5215E2A62400359E92 /* home-icon-preinterview@2x.png in Resources */,
 				B73CBE5315E2A62400359E92 /* icon-triangle-down.png in Resources */,
+				425A3436195553FC008352D4 /* tick.wav in Resources */,
 				B73CBE5415E2A62400359E92 /* icon-triangle-down@2x.png in Resources */,
 				B73CBE5515E2A62400359E92 /* icon-triangle-up.png in Resources */,
 				B73CBE5615E2A62400359E92 /* icon-triangle-up@2x.png in Resources */,
@@ -1109,14 +1163,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				520C8AD31954C662006F7CBE /* CKPopTipView.m in Sources */,
+				4272BE2B195F34F600A0FB33 /* CKCommentButton.m in Sources */,
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				425A342D195544CA008352D4 /* PieMenuItem.m in Sources */,
 				427DD62412D99571000D1A37 /* WorkBenchAppDelegate.m in Sources */,
 				520C8B081954C71E006F7CBE /* UIButton+Additions.m in Sources */,
+				4272BE28195F34DD00A0FB33 /* CKHeartButton.m in Sources */,
 				520C8B0C1954C71E006F7CBE /* StringFunctions.m in Sources */,
 				520C8B051954C71E006F7CBE /* UIColor+Additions.m in Sources */,
 				520C8ADF1954C662006F7CBE /* CKArrowButton.m in Sources */,
 				427DD62512D99571000D1A37 /* WorkBenchViewController.m in Sources */,
 				427DD67A12D99B77000D1A37 /* AnimationGroups.m in Sources */,
+				425A342C195544CA008352D4 /* PieMenu.m in Sources */,
 				520C8B151954CD52006F7CBE /* CKCustomActivityIndicator.m in Sources */,
 				427DD67B12D99B77000D1A37 /* AnimationTransactions.m in Sources */,
 				520C8AE41954C662006F7CBE /* MZStyleManager.m in Sources */,
@@ -1135,6 +1193,7 @@
 				427DD68712D99B77000D1A37 /* ShapeLayers.m in Sources */,
 				427DD68812D99B77000D1A37 /* TextLayers.m in Sources */,
 				427DD68C12D99B77000D1A37 /* StreamView.m in Sources */,
+				425A342E195544CA008352D4 /* PieView.m in Sources */,
 				520C8ADB1954C662006F7CBE /* CKLabel.m in Sources */,
 				42006FB51882904800890E75 /* NoxView.m in Sources */,
 				427DD68F12D99B9F000D1A37 /* LessonPlan.m in Sources */,
@@ -1142,7 +1201,7 @@
 				42BD8B3217948FB100BAB4BE /* NUButtonView.m in Sources */,
 				427DD69912D99FA2000D1A37 /* LayerTransitions.m in Sources */,
 				427DD76E12DAC0AA000D1A37 /* Geometry.m in Sources */,
-				520C8AD81954C662006F7CBE /* CKCustomButtonControl.m in Sources */,
+				520C8AD81954C662006F7CBE /* CKDynamicButton.m in Sources */,
 				427DD88212DAE05C000D1A37 /* DetailedLayer.m in Sources */,
 				427DD96B12DBCDB9000D1A37 /* TransformingLayers.m in Sources */,
 				427DDAC012DD8770000D1A37 /* ImageLayer.m in Sources */,
@@ -1196,13 +1255,14 @@
 				B714626717A9A23300B59630 /* DrawView.m in Sources */,
 				B779C86917B18120000E13B8 /* CTextField.m in Sources */,
 				520C8ADD1954C662006F7CBE /* CKTextInputField.m in Sources */,
+				4272BE25195EAEE600A0FB33 /* CKShareButton.m in Sources */,
 				520C8B061954C71E006F7CBE /* UIView+Additions.m in Sources */,
 				520C8ADE1954C662006F7CBE /* CKTextInputView.m in Sources */,
 				520C8B071954C71E006F7CBE /* UIViewController+Additions.m in Sources */,
 				B7CDED3C17BED7F600BB0759 /* GHImageContainerView.m in Sources */,
 				520C8AD71954C662006F7CBE /* CKRectangleButton.m in Sources */,
 				520C8AE01954C662006F7CBE /* CKScrollView.m in Sources */,
-				B7CDED4B17C412C600BB0759 /* CustomDrawView.m in Sources */,
+				425A342B195544CA008352D4 /* BFSoundEffect.m in Sources */,
 				520C8B0F1954C71E006F7CBE /* UIFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1223,7 +1283,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WorkBench_Prefix.pch;
 				INFOPLIST_FILE = "WorkBench-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = WorkBench;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1240,7 +1300,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WorkBench_Prefix.pch;
 				INFOPLIST_FILE = "WorkBench-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = WorkBench;
 				VALIDATE_PRODUCT = YES;

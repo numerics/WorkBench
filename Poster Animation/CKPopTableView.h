@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CKLabel.h"
-#import "CKCustomButtonControl.h"
+#import "CKDynamicButton.h"
 
 typedef enum
 {

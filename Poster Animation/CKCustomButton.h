@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Numerics. All rights reserved.
 //
 
-#import "CKCustomButtonControl.h"
+#import "CKDynamicButton.h"
 typedef enum
 {
     kCustomButton,			// provide Custom Path by overiding -(CGMutablePathRef)createFrame:(CGRect)rect;
@@ -15,7 +15,7 @@ typedef enum
     kRectangleButton		// The self.notchSize will be used as the corner radius
 } CKButtonType;
 
-@interface CKCustomButton : CKCustomButtonControl
+@interface CKCustomButton : CKDynamicButton
 {
 @private
     NSMutableDictionary *backgroundStates;  ///** TODO ** AND ALL THE DIFF STATES, COLOR, TITLE, SHADOW, ETC...

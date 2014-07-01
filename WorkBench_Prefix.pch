@@ -23,7 +23,7 @@
 #import "CKArrowButton.h"
 #import "CKButton.h"
 #import "CKCustomButton.h"
-#import "CKCustomButtonControl.h"
+#import "CKDynamicButton.h"
 #import "CKRectangleButton.h"
 #import "CKCustomActivityIndicator.h"
 #import "CKTextInputField.h"

@@ -33,7 +33,6 @@
 #import "ProgressBarTestView.h"
 #import "NUButtonView.h"
 #import "GHImageContainerView.h"
-#import "CustomDrawView.h"
 #import "Playground.h"
 #import "NoxView.h"
 
@@ -55,7 +54,7 @@
 	if (self != nil) 
 	{
 //		NSString *ag = [Geometry class];
-		NSArray *geom = [NSArray arrayWithObjects:[Playground class],[NoxView class],[CustomDrawView class],[NUButtonView class],[AccordianDemo class],[Geometry class], [TransformingLayers class], nil];
+		NSArray *geom = [NSArray arrayWithObjects:[Playground class],[NoxView class],[NUButtonView class],[AccordianDemo class],[Geometry class], [TransformingLayers class], nil];
 		NSArray *hier = [NSArray arrayWithObjects:[LayerTree class],nil];
 		NSArray *drawing = [NSArray arrayWithObjects:[LayerDrawing class], [StyleProperties class], nil];
 		NSArray *animation = [NSArray arrayWithObjects:[BasicAnimation class], [GHImageContainerView class],[AnimationGroups class], 

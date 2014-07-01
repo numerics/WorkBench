@@ -45,20 +45,10 @@ typedef enum
     kCBRectangleButton		// The self.notchSize will be used as the corner radius
 } CBButtonType;
 
-@interface CKCustomButtonControl : UIControl
+@interface CKDynamicButton : UIControl
 {
-    CGRect				pathRect;
-    CGMutablePathRef	containerPath;
-    CGMutablePathRef	selectionPath;
-    
-    CAShapeLayer        *pathLayer;
-    CAShapeLayer        *maskLayer;
-    CAShapeLayer        *selGradMaskLayer;
-    CAShapeLayer        *shapeLayer;
-    CAGradientLayer     *normalStateGradientLayer;
-    CAGradientLayer     *selectedStateGradientLayer;
-    CAShapeLayer        *selectedStateBackgroundLayer;
-    
+	CAShapeLayer        *shapeLayer;
+	CAShapeLayer        *selectedStateBackgroundLayer;
 }
 @property (strong, nonatomic) CKLabel *titleLabel;
 @property (strong, nonatomic) CKLabel *subTitle;

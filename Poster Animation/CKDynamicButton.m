@@ -6,15 +6,27 @@
 //  Copyright (c) 2014 Numerics. All rights reserved.
 //
 
-#import "CKCustomButtonControl.h"
+#import "CKDynamicButton.h"
+#import <QuartzCore/QuartzCore.h>
 
-@interface CKCustomButtonControl ()
+@interface CKDynamicButton ()
 {
     BOOL    isHighlighting;  // for drawRect
 	int		numberTextLines;
     CGRect  titleFrame;
     CGRect  subTitleFrame;
+    CGRect  viewFrame;
+
+	CGRect				pathRect;
+    CGMutablePathRef	containerPath;
+    CGMutablePathRef	selectionPath;
     
+    CAShapeLayer        *pathLayer;
+    CAShapeLayer        *maskLayer;
+    CAShapeLayer        *selGradMaskLayer;
+    CAGradientLayer     *normalStateGradientLayer;
+    CAGradientLayer     *selectedStateGradientLayer;
+
 }
 @property (nonatomic, assign) CGFloat titleShrink;
 
@@ -32,8 +44,318 @@
 @end
 
 
-@implementation CKCustomButtonControl
+@implementation CKDynamicButton
 @synthesize titleFrame,subTitleFrame;
+#pragma mark - property setters
+
+-(void)setStartColor:(UIColor *)color
+{
+	if(_startColor != color)
+	{
+		_startColor = nil;
+		_startColor = color;
+		[self update];
+	}
+}
+
+-(void)setEndColor:(UIColor *)color
+{
+	if(_endColor != color)
+	{
+		_endColor = nil;
+		_endColor = color;
+		[self update];
+	}
+}
+
+-(void)setFillColor:(UIColor *)color
+{
+	if(_fillColor != color)
+	{
+		_fillColor = nil;
+		_fillColor = color;
+		[self update];
+	}
+}
+
+-(void)setHighlightFillColor:(UIColor *)color
+{
+	if(_highlightFillColor != color)
+	{
+		_highlightFillColor = nil;
+		_highlightFillColor = color;
+		[self update];
+	}
+}
+-(void)setGrad1Color:(UIColor *)color
+{
+	if(_grad2Color != color)
+	{
+		_grad2Color = nil;
+		_grad2Color = color;
+		[self update];
+	}
+}
+-(void)setGrad2Color:(UIColor *)color
+{
+	if(_grad1Color != color)
+	{
+		_grad1Color = nil;
+		_grad1Color = color;
+		[self update];
+	}
+}
+
+-(void)setBorderColor:(UIColor *)color
+{
+	if(_borderColor != color)
+	{
+		_borderColor = nil;
+		_borderColor = color;
+		[self update];
+	}
+}
+
+-(void)setShadowColor:(UIColor *)color
+{
+	if(_shadowColor != color)
+	{
+		_shadowColor = nil;
+		_shadowColor = color;
+	}
+	[self update];
+}
+
+-(void)setGradientButton:(BOOL)value
+{
+	if(_gradientButton != value)
+	{
+		_gradientButton = value;
+		[self update];
+	}
+}
+
+-(void)setHasSelectedGradient:(BOOL)value
+{
+	if(_hasSelectedGradient != value)
+	{
+		_hasSelectedGradient = value;
+		[self update];
+	}
+}
+
+-(void)setAddOuterGlow:(BOOL)value
+{
+	if(_addOuterGlow != value)
+	{
+		_addOuterGlow = value;
+		[self update];
+	}
+}
+
+-(void)setAddShadow:(BOOL)value
+{
+	if(_addShadow != value)
+	{
+		_addShadow = value;
+		[self update];
+	}
+}
+
+-(void)setAddTopLeftNotch:(BOOL)value
+{
+	if(_addTopLeftNotch != value)
+	{
+		_addTopLeftNotch = value;
+		[self update];
+	}
+}
+
+-(void)setAddTopRightNotch:(BOOL)value
+{
+	if(_addTopRightNotch != value)
+	{
+		_addTopRightNotch = value;
+		[self update];
+	}
+}
+
+-(void)setAddBottomRightNotch:(BOOL)value
+{
+	if(_addBottomRightNotch != value)
+	{
+		_addBottomRightNotch = value;
+		[self update];
+	}
+}
+-(void)setAddBottomLeftNotch:(BOOL)value
+{
+	if(_addBottomLeftNotch != value)
+	{
+		_addBottomLeftNotch = value;
+		[self update];
+	}
+}
+
+-(void)setGlowAlpha:(CGFloat)value
+{
+	if(_glowAlpha != value)
+	{
+		_glowAlpha = value;
+		[self update];
+	}
+}
+
+-(void)setGlowRadius:(CGFloat)value
+{
+	if(_glowRadius != value)
+	{
+		_glowRadius = value;
+		[self update];
+	}
+}
+
+-(void)setShadowAlpha:(CGFloat)value
+{
+	if(_shadowAlpha != value)
+	{
+		_shadowAlpha = value;
+		[self update];
+	}
+}
+-(void)setShadowRadius:(CGFloat)value
+{
+	if(_shadowRadius != value)
+	{
+		_shadowRadius = value;
+		[self update];
+	}
+}
+
+-(void)setUnitSize:(CGFloat)value
+{
+	if(_unitSize != value)
+	{
+		_unitSize = value;
+		[self update];
+	}
+}
+
+-(void)setLineWidth:(CGFloat)value
+{
+	if(_lineWidth != value)
+	{
+		_lineWidth = value;
+		[self update];
+	}
+}
+-(void)setLineAlpha:(CGFloat)value
+{
+	if(_lineAlpha != value)
+	{
+		_lineAlpha = value;
+		[self update];
+	}
+}
+-(void)setFillAlpha:(CGFloat)value
+{
+	if(_fillAlpha != value)
+	{
+		_fillAlpha = value;
+		[self update];
+	}
+}
+-(void)setOffSetLabel_X:(CGFloat)value
+{
+	if(_offSetLabel_X != value)
+	{
+		_offSetLabel_X = value;
+		[self update];
+	}
+}
+-(void)setOffSetLabel_Y:(CGFloat)value
+{
+	if(_offSetLabel_Y != value)
+	{
+		_offSetLabel_Y = value;
+		[self update];
+	}
+}
+-(void)setLabelOffset:(CGFloat)value
+{
+	if(_labelOffset != value)
+	{
+		_labelOffset = value;
+		[self update];
+	}
+}
+-(void)setOffSetIcon_X:(CGFloat)value
+{
+	if(_offSetIcon_X != value)
+	{
+		_offSetIcon_X = value;
+		[self update];
+	}
+}
+-(void)setOffSetIcon_Y:(CGFloat)value
+{
+	if(_offSetIcon_Y != value)
+	{
+		_offSetIcon_Y = value;
+		[self update];
+	}
+}
+
+-(void)setAlignLabel:(LabelAlignment)value
+{
+    if(_alignLabel != value)
+	{
+		_alignLabel = value;
+		if( value == kLabelLeft)
+		{
+			self.titleLabel.textAlignment = NSTextAlignmentLeft;
+			self.subTitle.textAlignment = NSTextAlignmentLeft;
+		}
+		else if( value == kLabelRight)
+		{
+			self.titleLabel.textAlignment = NSTextAlignmentRight;
+			self.subTitle.textAlignment = NSTextAlignmentRight;
+		}
+		else
+		{
+			self.titleLabel.textAlignment = NSTextAlignmentCenter;
+			self.subTitle.textAlignment = NSTextAlignmentCenter;
+		}
+		[self update];
+	}
+}
+
+-(void)setLayoutLabels:(LabelLayout)value
+{
+	if(_layoutLabels != value)
+	{
+		_layoutLabels = value;
+		[self update];
+	}
+}
+-(void)setAlignIcon:(IconAlignment)value
+{
+	if(_alignIcon != value)
+	{
+		_alignIcon = value;
+		[self update];
+	}
+}
+
+//-(void)setFrame:(CGRect)vframe
+//{
+//	if( !CGRectEqualToRect(self.frame, vframe) )
+//	{
+//		self.frame = vframe;
+//		if( self.created )
+//			[self update];
+//	}
+//}
 
 #pragma mark - init methods
 
@@ -83,55 +405,57 @@
     self.commitManagedByParent = NO;                // if a superclass overrides the Commit Method
     
 	// we need to know
-	self.lineAlpha = 1.0;
-	self.fillAlpha = 1.0;
+	_lineAlpha = 1.0;
+	_fillAlpha = 1.0;
 	
-	self.centerTitleIfSubEmpty = NO;
-	self.offSetLabel_X = 0.0;
-	self.offSetLabel_Y = 0.0;
+	_centerTitleIfSubEmpty = NO;
+	_offSetLabel_X = 0.0;
+	_offSetLabel_Y = 0.0;
 	
-	self.offSetIcon_X = 0.0;
-	self.offSetIcon_Y = 0.0;
-	self.alignIcon = kIconRight;
+	_offSetIcon_X = 0.0;
+	_offSetIcon_Y = 0.0;
+	_alignIcon = kIconRight;
 	
-	[self setColorApperance:kFillColor   WithHexString:@"0x222222" withAlpha:self.fillAlpha];
-	[self setColorApperance:kStartColor  WithHexString:@"0x222222" withAlpha:self.fillAlpha];
-	[self setColorApperance:kEndColor    WithHexString:@"0x000000" withAlpha:self.fillAlpha];
-	[self setColorApperance:kBorderColor WithHexString:@"0x666666" withAlpha:self.lineAlpha];
+	[self setColorApperance:kFillColor   WithHexString:@"0x222222" withAlpha:_fillAlpha];
+	[self setColorApperance:kStartColor  WithHexString:@"0x222222" withAlpha:_fillAlpha];
+	[self setColorApperance:kEndColor    WithHexString:@"0x000000" withAlpha:_fillAlpha];
+	[self setColorApperance:kBorderColor WithHexString:@"0x666666" withAlpha:_lineAlpha];
 	
-	self.highlightFillColor = [[UIFactory sharedInstance] defaultColorHighlight];
+	_highlightFillColor = [[UIFactory sharedInstance] defaultColorHighlight];
 
-	if (!self.shadowColor)
-		self.shadowColor = [UIColor blackColor];
+	if (!_shadowColor)
+		_shadowColor = [UIColor blackColor];
 	
 	pathRect = CGRectMake(0, 0, frame.size.width, frame.size.height);
 	
 	if( self.btnType == kCBNotchedButton)
-		self.unitSize = 10;
+		_unitSize = 10;
 	else
-		self.unitSize = 3;
+		_unitSize = 3;
 		
 	self.alpha = 1.0;
-	self.glowRadius = 10.0;
-	self.glowAlpha = 0.8;
+	_glowRadius = 10.0;
+	_glowAlpha = 0.8;
 	
-	self.shadowAlpha = 0.8;
-	self.shadowRadius = 6.0;
-	self.shadowOffset = CGSizeMake(0.0, 0.0);
+	_shadowAlpha = 0.8;
+	_shadowRadius = 6.0;
+	_shadowOffset = CGSizeMake(0.0, 0.0);
 	
 	if( self.btnType == kCBCircleButton)
-		self.gradientButton = YES;
+		_gradientButton = YES;
 	
-	self.layoutLabels = kVerticalLabels;
-	self.lineWidth = 1.0;
+	_layoutLabels = kVerticalLabels;
+	_lineWidth = 1.0;
     self.animateSelection = NO;
-	self.hasSelectedGradient = self.gradientButton;
+	_hasSelectedGradient = _gradientButton;
+	viewFrame = self.frame;
+	[self commit];
 }
 
 - (id)initWithFrame:(CGRect)frame attrTitle:(NSMutableAttributedString *)aTitle
 {
     self = [self initWithFrame:frame];
-	self.lineWidth = 1.0;
+	_lineWidth = 1.0;
 	self.hasSubTitle = NO;
     
     self.titleLabel.attributedText = aTitle;
@@ -139,7 +463,7 @@
     self.titleLabel.backgroundColor = [UIColor clearColor];
 	
     [self bringSubviewToFront:self.titleLabel];
-    
+    [self update];
     return self;
     
 }
@@ -163,6 +487,7 @@
     [self setUpTitle:frame title:title];
 	[self setUpSubTitle:frame subTitle:subTitle];
 	
+    [self update];
 	return self;
 }
 
@@ -172,6 +497,7 @@
 	self.hasSubTitle = NO;
 	[self setUpTitle:frame title:title];
 	
+    [self update];
     return self;
 }
 
@@ -182,7 +508,7 @@
 {
     if( self.btnType == kCBRectangleButton || self.btnType == kCBCustomButton )
 	{
-		self.unitSize = [MZStyleManager getCornerRadiusForButtonType:apperance];
+		_unitSize = [MZStyleManager getCornerRadiusForButtonType:apperance];
 	}
 	
 	UIColor *aa = getTextColorForButton(apperance);
@@ -194,89 +520,89 @@
     self.titleLabel.font = avenLight;
     
 	CGFloat lw = [MZStyleManager getLineWidthForButtonType:apperance];
-	self.lineWidth = lw;
+	_lineWidth = lw;
 	if( lw > 0.0)
 	{
 		CGFloat la = [MZStyleManager getLineOpacityForButtonType:apperance];
 		if( la > 0.0 && la <= 1.0 )
-			self.lineAlpha = la;
+			_lineAlpha = la;
 		
 		NSString *bString = [MZStyleManager getBorderColorForButtonType:apperance];
 		if( bString )
 		{
-			self.borderColor = [UIColor colorWithHexString:bString withAlpha:self.lineAlpha];
+			_borderColor = [UIColor colorWithHexString:bString withAlpha:_lineAlpha];
 		}
 	}
 	
     NSTextAlignment align = getTextAlignmentForButton(apperance);
     if ( align == NSTextAlignmentLeft)
-        self.alignLabel = kLabelLeft;
+        _alignLabel = kLabelLeft;
     if ( align == NSTextAlignmentRight)
-        self.alignLabel = kLabelRight;
+        _alignLabel = kLabelRight;
     
-    self.fillAlpha = [MZStyleManager getOpacityForButtonType:apperance];
+    _fillAlpha = [MZStyleManager getOpacityForButtonType:apperance];
     
     NSString *grad = [MZStyleManager getGradientForButtonType:apperance];
     if( [grad isEqualToString:@"YES"])
     {
-        self.gradientButton = YES;
-        self.startColor = [UIColor colorWithHexString:[MZStyleManager getStartColorForButtonType:apperance] withAlpha:self.fillAlpha];
-        self.endColor = [UIColor colorWithHexString:[MZStyleManager getEndColorForButtonType:apperance] withAlpha:self.fillAlpha];
+        _gradientButton = YES;
+        _startColor = [UIColor colorWithHexString:[MZStyleManager getStartColorForButtonType:apperance] withAlpha:_fillAlpha];
+        _endColor = [UIColor colorWithHexString:[MZStyleManager getEndColorForButtonType:apperance] withAlpha:_fillAlpha];
     }
     else
     {
-        self.gradientButton = NO;
+        _gradientButton = NO;
 		NSString *cString = [MZStyleManager getFillColorForButtonType:apperance];
 		if( cString )
 		{
 			if([cString isEqualToString:@"clear"])
-				self.fillColor = [UIColor clearColor];
+				_fillColor = [UIColor clearColor];
 			else
-				self.fillColor = [UIColor colorWithHexString:cString withAlpha:self.fillAlpha];
+				_fillColor = [UIColor colorWithHexString:cString withAlpha:_fillAlpha];
 		}
     }
     
     NSString *invGrad = [MZStyleManager getInvGradientForButtonType:apperance];
     if( [invGrad isEqualToString:@"YES"])
     {
-        self.hasSelectedGradient = YES;
-        self.grad1Color = [UIColor colorWithHexString:[MZStyleManager getPoint1ColorForButtonType:apperance] withAlpha:self.fillAlpha];
-        self.grad2Color = [UIColor colorWithHexString:[MZStyleManager getPoint2ColorForButtonType:apperance] withAlpha:self.fillAlpha];
+        _hasSelectedGradient = YES;
+        _grad1Color = [UIColor colorWithHexString:[MZStyleManager getPoint1ColorForButtonType:apperance] withAlpha:_fillAlpha];
+        _grad2Color = [UIColor colorWithHexString:[MZStyleManager getPoint2ColorForButtonType:apperance] withAlpha:_fillAlpha];
     }
     else
     {
-        self.hasSelectedGradient = NO;
+        _hasSelectedGradient = NO;
 		NSString *cString = [MZStyleManager getHighliteColorForButtonType:apperance];
 		if( cString )
 		{
 			if([cString isEqualToString:@"clear"])
-				self.highlightFillColor = [UIColor clearColor];
+				_highlightFillColor = [UIColor clearColor];
 			else
-				self.highlightFillColor = [UIColor colorWithHexString:cString withAlpha:self.fillAlpha];
+				_highlightFillColor = [UIColor colorWithHexString:cString withAlpha:_fillAlpha];
 		}
 		else
-			self.highlightFillColor = [[UIFactory sharedInstance] defaultColorHighlight];
+			_highlightFillColor = [[UIFactory sharedInstance] defaultColorHighlight];
     }
 	
 	
     NSString *drop = [MZStyleManager getDropShadowForButtonType:apperance];
     if( [drop isEqualToString:@"YES"])
     {
-        self.addShadow = YES;
-        self.shadowAlpha = [MZStyleManager getShadowOpacityForButtonType:apperance];
-        self.shadowRadius = [MZStyleManager getShadowRadiusForButtonType:apperance];
+        _addShadow = YES;
+        _shadowAlpha = [MZStyleManager getShadowOpacityForButtonType:apperance];
+        _shadowRadius = [MZStyleManager getShadowRadiusForButtonType:apperance];
 		NSString *shColor = [MZStyleManager getShadowColorForButtonType:apperance];
 		if( shColor )
 		{
-			self.shadowColor = [UIColor colorWithHexString:shColor];
+			_shadowColor = [UIColor colorWithHexString:shColor];
 		}
 			
         CGFloat off = [MZStyleManager getShadowOffsetForButtonType:apperance];
-        self.shadowOffset = CGSizeMake(0.0, off);
+        _shadowOffset = CGSizeMake(0.0, off);
     }
     else
     {
-        self.addShadow = NO;
+        _addShadow = NO;
     }
     
 	//    NSString *link = [MZStyleManager getLinkForButtonType:apperance];
@@ -301,58 +627,40 @@
 {
     if( apperance == kFillColor)
 	{
-        if(self.fillColor && stringToConvert == nil )
+        if(_fillColor && stringToConvert == nil )
 		{
-			[UIColor colorWithRed:self.fillColor.red green:self.fillColor.green blue:self.fillColor.blue alpha:alpha];
+			[UIColor colorWithRed:_fillColor.red green:_fillColor.green blue:_fillColor.blue alpha:alpha];
 		}
 		else
-			self.fillColor = [UIColor colorWithHexString:stringToConvert withAlpha:alpha];
+			_fillColor = [UIColor colorWithHexString:stringToConvert withAlpha:alpha];
 	}
     else if (apperance == kBorderColor )
 	{
-        if(self.borderColor && stringToConvert == nil )
+        if(_borderColor && stringToConvert == nil )
 		{
-			[UIColor colorWithRed:self.borderColor.red green:self.borderColor.green blue:self.borderColor.blue alpha:alpha];
+			[UIColor colorWithRed:_borderColor.red green:_borderColor.green blue:_borderColor.blue alpha:alpha];
 		}
 		else
-			self.borderColor = [UIColor colorWithHexString:stringToConvert withAlpha:alpha];
+			_borderColor = [UIColor colorWithHexString:stringToConvert withAlpha:alpha];
 	}
     else if (apperance == kStartColor )
 	{
-        if(self.startColor && stringToConvert == nil )
+        if(_startColor && stringToConvert == nil )
 		{
-			[UIColor colorWithRed:self.startColor.red green:self.startColor.green blue:self.startColor.blue alpha:alpha];
+			[UIColor colorWithRed:_startColor.red green:_startColor.green blue:_startColor.blue alpha:alpha];
 		}
 		else
-			self.startColor = [UIColor colorWithHexString:stringToConvert withAlpha:alpha];
+			_startColor = [UIColor colorWithHexString:stringToConvert withAlpha:alpha];
 	}
     else if (apperance == kEndColor )
 	{
-        if(self.endColor && stringToConvert == nil )
+        if(_endColor && stringToConvert == nil )
 		{
-			[UIColor colorWithRed:self.endColor.red green:self.endColor.green blue:self.endColor.blue alpha:alpha];
+			[UIColor colorWithRed:_endColor.red green:_endColor.green blue:_endColor.blue alpha:alpha];
 		}
 		else
-			self.endColor = [UIColor colorWithHexString:stringToConvert withAlpha:alpha];
+			_endColor = [UIColor colorWithHexString:stringToConvert withAlpha:alpha];
 	}
-}
-
--(void)setAddShadow:(BOOL)addShadow
-{
-    if( addShadow )
-    {
-        self.addOuterGlow = NO;
-    }
-    _addShadow = addShadow;
-}
-
--(void)setAddOuterGlow:(BOOL)addOuterGlow
-{
-    if( addOuterGlow )
-    {
-        self.addShadow = NO;
-    }
-    _addOuterGlow = addOuterGlow;
 }
 
 - (void)showButtonActivity
@@ -376,7 +684,7 @@
 -(void)setUpTitle:(CGRect)frame title:(NSString *)title
 {
 	CGFloat titleHeight = 20.0;
-    if(self.hasSubTitle == NO)
+    if(_hasSubTitle == NO)
     {
         if( frame.size.height > 50)						// Large Button... just a title, should be Multy line text for a label
         {
@@ -384,7 +692,7 @@
             numberTextLines = 0;		// allows for multiple lines
         }
 	}
-	CGFloat shrink = 10 + self.titleShrink + self.offSetLabel_X;            // To fit Labels in the Button
+	CGFloat shrink = 10 + self.titleShrink + _offSetLabel_X;            // To fit Labels in the Button
 	
 	self.titleLabel = [[CKLabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width - shrink, titleHeight)];
 	[self addSubview:self.titleLabel];
@@ -405,7 +713,7 @@
 	CGFloat subTitleHeight;
     numberTextLines = 1;
     subTitleHeight = 16.0;
-	CGFloat shrink = 10 + self.titleShrink + self.offSetLabel_X;            // To fit Labels in the Button
+	CGFloat shrink = 10 + self.titleShrink + _offSetLabel_X;            // To fit Labels in the Button
     
 	self.subTitle = [[CKLabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width - shrink, subTitleHeight)];
 	[self addSubview:self.subTitle];
@@ -474,25 +782,6 @@
     }
 }
 
--(void)setAlignLabel:(LabelAlignment)alignLabel
-{
-    _alignLabel = alignLabel;
-    if( alignLabel == kLabelLeft)
-    {
-		self.titleLabel.textAlignment = NSTextAlignmentLeft;
-		self.subTitle.textAlignment = NSTextAlignmentLeft;
-    }
-    else if( alignLabel == kLabelRight)
-    {
-		self.titleLabel.textAlignment = NSTextAlignmentRight;
-		self.subTitle.textAlignment = NSTextAlignmentRight;
-    }
-    else
-	{
-		self.titleLabel.textAlignment = NSTextAlignmentCenter;
-		self.subTitle.textAlignment = NSTextAlignmentCenter;
-	}
-}
 
 #pragma mark - Images
 -(void)addImage:(CGRect)frame icon:(UIImage *)icon selectedIcon:(UIImage *)selectedIcon
@@ -581,7 +870,7 @@
 -(void)addImage:(CGRect)frame icon:(UIImage *)icon selectedIcon:(UIImage *)selectedIcon align:(IconAlignment)align
 {
 	[self addImage:frame icon:icon selectedIcon:selectedIcon];
-	self.alignIcon = align;
+	_alignIcon = align;
 }
 
 #pragma mark - Layout
@@ -589,6 +878,12 @@
 - (void) layoutSubviews
 {
     [super layoutSubviews];
+	if(self.created && ((self.frame.size.width != viewFrame.size.width ) || (self.frame.size.height != viewFrame.size.height )) )
+	{
+		viewFrame = self.frame;
+		[self update];
+	}
+	
     if(self.hasSubTitle == YES)
     {
         if( self.layoutLabels == kHorizontalLabels)                                             // side by side
@@ -675,7 +970,7 @@
 
 -(void)changeLabelLayout:(LabelLayout)layoutLabel titleRect:(CGRect)tRect subTitleRect:(CGRect)sRect
 {
-    self.layoutLabels = layoutLabel;
+    _layoutLabels = layoutLabel;
     CGRect frame = self.bounds;
     self.usingLabelRects = YES;
     if(!self.hasSubTitle)			// only one label, just check/set the requested frame rect
@@ -699,7 +994,7 @@
         if(frame.size.height > (tRect.size.height + sRect.size.height) )
         {
             CGFloat sp = frame.size.height - (tRect.size.height + sRect.size.height);
-            self.offSetLabel_Y = 0.25 * sp;
+            _offSetLabel_Y = 0.25 * sp;
             titleFrame = tRect;
             subTitleFrame = sRect;
         }
@@ -719,7 +1014,7 @@
         if(frame.size.width > (tRect.size.width + sRect.size.width) )
         {
             CGFloat sp = frame.size.width - (tRect.size.width + sRect.size.width);
-            self.offSetLabel_X = 0.25 * sp;
+            _offSetLabel_X = 0.25 * sp;
             titleFrame = tRect;
             subTitleFrame = sRect;
         }
@@ -739,11 +1034,11 @@
 
 -(void)changeLabelLayout:(LabelLayout)layoutLabel
 {
-    self.layoutLabels = layoutLabel;
+    _layoutLabels = layoutLabel;
     CGRect frame = self.bounds;
     if(!self.hasSubTitle)
     {
-        CGFloat shrink = 10 + self.titleShrink + self.offSetLabel_X;            // To fit Labels in the Button
+        CGFloat shrink = 10 + _titleShrink + _offSetLabel_X;            // To fit Labels in the Button
         self.titleLabel.width = frame.size.width - shrink;
         self.subTitle.width = frame.size.width - shrink;
         return;
@@ -764,7 +1059,7 @@
             subTitleHeight = titleHeight;
         }
         
-        CGFloat shrink = 10 + self.titleShrink + self.offSetLabel_X;            // To fit Labels in the Button
+        CGFloat shrink = 10 + _titleShrink + _offSetLabel_X;            // To fit Labels in the Button
         titleFrame    = CGRectMake(0, 0, frame.size.width - shrink, titleHeight);
         subTitleFrame = CGRectMake(0, 0, frame.size.width - shrink, subTitleHeight);
     }
@@ -775,7 +1070,7 @@
         if( frame.size.height > 40)                                         // Large Button... just a title, should be Multi line text for a label
         {
             numberTextLines = 0;                                            // allows for multiple lines... should already be set
-            CGFloat shrink = 10 + self.titleShrink + self.offSetLabel_X;
+            CGFloat shrink = 10 + _titleShrink + _offSetLabel_X;
             titleWidth = (0.5* (frame.size.width-shrink) );
             subTitleWidth = titleWidth;
             titleHeight = frame.size.height - 10.0;
@@ -784,7 +1079,7 @@
         else
         {
             numberTextLines = 1;                                            // only one line allowed
-            CGFloat shrink = 10 + self.titleShrink + self.offSetLabel_X;
+            CGFloat shrink = 10 + _titleShrink + _offSetLabel_X;
             titleWidth = (0.5* (frame.size.width-shrink) );
             subTitleWidth = titleWidth;
             titleHeight = 20.0;
@@ -810,9 +1105,9 @@
             [CATransaction begin];      // this stops the implicit aniamtions of layers
             [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
 			
-			if( self.gradientButton )
+			if( _gradientButton )
 			{
-				if( self.hasSelectedGradient )
+				if( _hasSelectedGradient )
 				{
 					normalStateGradientLayer.hidden = YES;
 					selectedStateGradientLayer.hidden = NO;
@@ -828,9 +1123,9 @@
         }
         else
 		{
-			if( self.gradientButton )
+			if( _gradientButton )
 			{
-				if( self.hasSelectedGradient )
+				if( _hasSelectedGradient )
 				{
 					normalStateGradientLayer.hidden = YES;
 					selectedStateGradientLayer.hidden = NO;
@@ -874,9 +1169,9 @@
             [CATransaction begin];      // this stops the implicit aniamtions of layers
             [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
 			
-			if( self.gradientButton )
+			if( _gradientButton )
 			{
-				if( self.hasSelectedGradient )
+				if( _hasSelectedGradient )
 				{
 					normalStateGradientLayer.hidden = NO;
 					selectedStateGradientLayer.hidden = YES;
@@ -892,9 +1187,9 @@
         }
         else
 		{
-			if( self.gradientButton )
+			if( _gradientButton )
 			{
-				if( self.hasSelectedGradient )
+				if( _hasSelectedGradient )
 				{
 					normalStateGradientLayer.hidden = NO;
 					selectedStateGradientLayer.hidden = YES;

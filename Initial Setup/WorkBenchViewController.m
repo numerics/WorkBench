@@ -34,8 +34,8 @@
 	}
 	else
 	{
-		self.displayView.frame       = CGRectMake(0,   0, 768, 640);
-		self.filterView.frame        = CGRectMake(0, 640, 768, 332);
+		self.displayView.frame       = CGRectMake(0,   0, 768, 662);
+		self.filterView.frame        = CGRectMake(0, 662, 768, 332);
 		self.listOfAnimations.frame  = CGRectMake(2,   2, 380, 328);
 		self.parametersView.frame    = CGRectMake(384, 2, 382, 328);
 	}
@@ -248,8 +248,8 @@
 	}
 	else
 	{
-		self.displayView.frame       = CGRectMake(0,   0, 768, 640);
-		self.filterView.frame        = CGRectMake(0, 640, 768, 332);
+		self.displayView.frame       = CGRectMake(0,   0, 768, 662);
+		self.filterView.frame        = CGRectMake(0, 662, 768, 332);
 		self.listOfAnimations.frame  = CGRectMake(2,   2, 380, 328);
 		self.parametersView.frame    = CGRectMake(384, 2, 382, 328);
 	}

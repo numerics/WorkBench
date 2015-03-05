@@ -53,8 +53,7 @@
 	self = [super init];
 	if (self != nil) 
 	{
-//		NSString *ag = [Geometry class];
-		NSArray *geom = [NSArray arrayWithObjects:[Playground class],[AccordianDemo class],[Geometry class], [TransformingLayers class], nil];
+		NSArray *geom = [NSArray arrayWithObjects:[AccordianDemo class],[Geometry class], [TransformingLayers class], nil];
 		NSArray *hier = [NSArray arrayWithObjects:[LayerTree class],nil];
 		NSArray *drawing = [NSArray arrayWithObjects:[LayerDrawing class], [StyleProperties class], nil];
 		NSArray *animation = [NSArray arrayWithObjects:[BasicAnimation class], [AnimationGroups class], 

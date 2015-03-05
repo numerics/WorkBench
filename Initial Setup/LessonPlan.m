@@ -54,15 +54,15 @@
 	if (self != nil) 
 	{
 //		NSString *ag = [Geometry class];
-		NSArray *geom = [NSArray arrayWithObjects:[Playground class],[NoxView class],[NUButtonView class],[AccordianDemo class],[Geometry class], [TransformingLayers class], nil];
+		NSArray *geom = [NSArray arrayWithObjects:[Playground class],[AccordianDemo class],[Geometry class], [TransformingLayers class], nil];
 		NSArray *hier = [NSArray arrayWithObjects:[LayerTree class],nil];
 		NSArray *drawing = [NSArray arrayWithObjects:[LayerDrawing class], [StyleProperties class], nil];
-		NSArray *animation = [NSArray arrayWithObjects:[BasicAnimation class], [GHImageContainerView class],[AnimationGroups class], 
+		NSArray *animation = [NSArray arrayWithObjects:[BasicAnimation class], [AnimationGroups class], 
 							  [AnimationTransactions class], [KeyframeAnimation class], [MotionAlongAPathView class],
 							  [LayerTransitions class], [CustomPropertyAnimation class], nil];
 		NSArray *special = [NSArray arrayWithObjects:[ShapeLayers class], [AdvancedShapeLayers class], [GradientLayers class], [TextLayers class], nil];
 		NSArray *advanced = [NSArray arrayWithObjects:[AttentionEventAnimation class], [SceneAnimation class], [StarFieldView class], [ReplicatorView class],
-							 [NanoSporesiPadView class],  [GeekBanner class],  [CoreTextView class], [ProgressBarTestView class],nil];
+							 [NanoSporesiPadView class],  [GeekBanner class],  [CoreTextView class], nil];
 		
 		
 		groups = [[NSArray alloc] initWithObjects:@"Geometry",

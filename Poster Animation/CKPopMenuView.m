@@ -30,7 +30,7 @@
 
 - (id)initWithFrame:(CGRect)frame titleDict:(NSDictionary *)titleDict item:(int)selectedItem
 {
-    int cnt  = [titleDict count] + 1;   // added item for the button
+    NSInteger cnt  = [titleDict count] + 1;   // added item for the button
     CGFloat hgt = cnt * frame.size.height;
     self.trueFrame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, hgt);
     self.btnFrame = frame;
@@ -50,7 +50,7 @@
 
 - (id)initWithFrame:(CGRect)frame iconDict:(NSDictionary *)iconDict titleDict:(NSDictionary *)titleDict item:(int)selectedItem
 {
-    int cnt  = [titleDict count] + 1;   // added item for the button
+    NSInteger cnt  = [titleDict count] + 1;   // added item for the button
     CGFloat hgt = cnt * frame.size.height;
     CGRect trueFrame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, hgt);
     self.btnFrame = frame;
@@ -73,7 +73,7 @@
 
 - (id)initWithFrame:(CGRect)frame iconDict:(NSDictionary *)iconDict selectedIconDict:(NSDictionary *)selectDict titleDict:(NSDictionary *)titleDict item:(int)selectedItem
 {
-    int cnt  = [titleDict count] + 1;
+    NSInteger cnt  = [titleDict count] + 1;
     CGFloat hgt = cnt * frame.size.height;
     self.trueFrame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, hgt);
     self.btnFrame = frame;
@@ -101,14 +101,14 @@
     
     NSMutableDictionary *mutableDictionary = [[NSMutableDictionary alloc] init];
     for (objectInstance in array)
-        [mutableDictionary setObject:objectInstance forKey:[NSNumber numberWithUnsignedInt:indexKey++]];
+        [mutableDictionary setObject:objectInstance forKey:[NSNumber numberWithUnsignedLong:indexKey++]];
     
     return (NSDictionary *)mutableDictionary;
 }
 
 - (id)initWithFrame:(CGRect)frame displayDataArray:(NSDictionary *)data item:(int)selectedItem
 {
-    int cnt  =  [[self indexKeyedDictionaryFromArray:[data objectForKey:@"titles"]]count];
+    NSInteger cnt  =  [[self indexKeyedDictionaryFromArray:[data objectForKey:@"titles"]]count];
     CGFloat hgt = cnt * frame.size.height;
     self.trueFrame = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, hgt);
     self.btnFrame = frame;
@@ -197,14 +197,14 @@
     NSIndexPath *indexPath = (NSIndexPath*) [notification object];
     self.menuSelected = NO;
 
-    int row = indexPath.row + 1;
-    NSString *title = [self.dataDict objectForKey:[NSString stringWithFormat:@"%d",row]];
+    NSInteger row = indexPath.row + 1;
+    NSString *title = [self.dataDict objectForKey:[NSString stringWithFormat:@"%ld",(long)row]];
     self.theButton.titleLabel.text = title;
     if(self.imgDict)
     {
-        NSString *imageName = [self.imgDict objectForKey:[NSString stringWithFormat:@"%d",row]];
+        NSString *imageName = [self.imgDict objectForKey:[NSString stringWithFormat:@"%ld",(long)row]];
         self.theButton.iconImage.image = [UIImage imageNamed:imageName];
-        imageName = [self.selImgDict objectForKey:[NSString stringWithFormat:@"%d",row]];
+        imageName = [self.selImgDict objectForKey:[NSString stringWithFormat:@"%ld",(long)row]];
         self.theButton.selectedImage.image = [UIImage imageNamed:imageName];
         
         if( row == 1)
@@ -272,17 +272,17 @@
 	cell.accessoryType = UITableViewCellAccessoryNone;
     
     cell.backgroundColor = [UIColor clearColor];
-    int row = indexPath.row + 1;
+    NSInteger row = indexPath.row + 1;
     if( self.labelCentric )
     {
-        NSString *title = [self.dataDict objectForKey:[NSString stringWithFormat:@"%d",row]];
+        NSString *title = [self.dataDict objectForKey:[NSString stringWithFormat:@"%ld",(long)row]];
         cell.Label.text = title;
     }
     else
     {
         if( self.imgDict )
         {
-            NSString *imageName = [self.imgDict objectForKey:[NSString stringWithFormat:@"%d",row]];
+            NSString *imageName = [self.imgDict objectForKey:[NSString stringWithFormat:@"%ld",(long)row]];
             cell.iconImage.image = [UIImage imageNamed:imageName];
             cell.iconImage.contentMode = UIViewContentModeScaleToFill;
              if( row == 1)
@@ -293,7 +293,7 @@
                 [cell.iconImage setFrame:CGRectMake(10, 15, 32, 15)];           // STEAM
 
         }
-        NSString *title = [self.dataDict objectForKey:[NSString stringWithFormat:@"%d",row]];
+        NSString *title = [self.dataDict objectForKey:[NSString stringWithFormat:@"%ld",(long)row]];
         cell.Label.text = title;
     }
     
@@ -304,7 +304,7 @@
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"kselectedPlatform" object:indexPath];
     
-    int row = indexPath.row + 1;
+    NSInteger row = indexPath.row + 1;
     if( row )
         [[NSNotificationCenter defaultCenter] postNotificationName:@"XBOX_PlatformSelected" object:indexPath];
     else if(row == 2)

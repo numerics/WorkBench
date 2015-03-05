@@ -182,7 +182,7 @@
 	cell.accessoryType = UITableViewCellAccessoryNone;
     
     cell.backgroundColor = [UIColor clearColor];
-    int row = indexPath.row + 1;
+    NSInteger row = indexPath.row + 1;
     if( self.labelCentric )
     {
         NSString *key = [self.dataOffset objectAtIndex:row-1 ];

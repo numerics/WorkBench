@@ -268,7 +268,7 @@
 
 - (void)generateAllGlowingSphereLayers:(CGPoint)origin
 {
-	int tNumPoints = [self countOfSpheresToGenerate];
+	NSInteger tNumPoints = [self countOfSpheresToGenerate];
 	NSUInteger i,j;
 	
 	for (i=0; i<(tNumPoints-1); i++)	// Take all points except the last one...
@@ -293,7 +293,7 @@
 	NSArray* sublayers = self.containerLayerForSpheres.sublayers;
 	
 	//--- Figure out center and radius ---
-	int tNumPoints = [self countOfSpheresToGenerate];
+	NSInteger tNumPoints = [self countOfSpheresToGenerate];
 	CGPoint tPoints[tNumPoints];
 	CGSize tViewSize = self.bounds.size;
 	NSUInteger tRandomRadius = ( (tViewSize.height) / 2 ) - 50 - 10;	// -10 pixels so none of the orbs fall would never fall outside initial window

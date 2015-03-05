@@ -152,14 +152,12 @@
 	
 	CGFloat startAngle = initAngle;
 	CGFloat pieceAngle = kTotalAngle / n_items;
-	float           myColorValues[] = {255.0/255.0, 255.0/255.0, 255.0/255.0, 1.0};
 	CGColorRef      myColor;
-	float           myColorValues2[] = {51.0/255.0, 51.0/255.0, 51.0/255.0, 1.0};
 	CGColorRef      myColor2;
     CGColorSpaceRef myColorSpace;
 	myColorSpace = CGColorSpaceCreateDeviceRGB ();
-    myColor = CGColorCreate (myColorSpace, myColorValues);
-	myColor2 = CGColorCreate (myColorSpace, myColorValues2);
+	myColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0].CGColor;
+	myColor2 = [UIColor colorWithRed:100.0/255.0 green:100.0/255.0 blue:100.0/255.0 alpha:1.0].CGColor;
 	
 	UIImage *previmage = nil;
 	CGPoint imagePoint;

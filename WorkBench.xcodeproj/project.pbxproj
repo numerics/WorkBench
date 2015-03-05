@@ -443,6 +443,8 @@
 		520C8B131954CD52006F7CBE /* CKCustomActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CKCustomActivityIndicator.h; sourceTree = "<group>"; };
 		520C8B141954CD52006F7CBE /* CKCustomActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CKCustomActivityIndicator.m; sourceTree = "<group>"; };
 		7CF3EFCC1029431CA37F9238 /* libPods-Workbench.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Workbench.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BA42DFDF00A4F50F66A0795 /* Pods-Workbench.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workbench.release.xcconfig"; path = "Pods/Target Support Files/Pods-Workbench/Pods-Workbench.release.xcconfig"; sourceTree = "<group>"; };
+		A802B5004717B7DD8D00ABCB /* Pods-Workbench.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workbench.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Workbench/Pods-Workbench.debug.xcconfig"; sourceTree = "<group>"; };
 		B714626517A9A23200B59630 /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
 		B714626617A9A23200B59630 /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
 		B71C58E817C82F5400F0679E /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image.png; path = Lessons/Animation/image.png; sourceTree = "<group>"; };
@@ -481,7 +483,6 @@
 		B7C49A161598DDE7001CB848 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B7CDED3A17BED7F600BB0759 /* GHImageContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHImageContainerView.h; sourceTree = "<group>"; };
 		B7CDED3B17BED7F600BB0759 /* GHImageContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHImageContainerView.m; sourceTree = "<group>"; };
-		DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workbench.xcconfig"; path = "Pods/Pods-Workbench.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -530,7 +531,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */,
+				33A9B88B829A6DB0C2C5C8B9 /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -585,6 +586,15 @@
 				7CF3EFCC1029431CA37F9238 /* libPods-Workbench.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33A9B88B829A6DB0C2C5C8B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A802B5004717B7DD8D00ABCB /* Pods-Workbench.debug.xcconfig */,
+				8BA42DFDF00A4F50F66A0795 /* Pods-Workbench.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		42006FAF18828C4A00890E75 /* RAC */ = {
@@ -1157,7 +1167,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Workbench-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Workbench/Pods-Workbench-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1277,7 +1287,7 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */;
+			baseConfigurationReference = A802B5004717B7DD8D00ABCB /* Pods-Workbench.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1290,16 +1300,17 @@
 				GCC_PREFIX_HEADER = WorkBench_Prefix.pch;
 				INFOPLIST_FILE = "WorkBench-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = WorkBench;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				VALID_ARCHS = "arm64 arm7s armv7";
 			};
 			name = Debug;
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */;
+			baseConfigurationReference = 8BA42DFDF00A4F50F66A0795 /* Pods-Workbench.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1314,6 +1325,7 @@
 				PRODUCT_NAME = WorkBench;
 				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 arm7s armv7";
 			};
 			name = Release;
 		};

@@ -36,8 +36,27 @@
 	
 	//WorkBenchAppDelegate *evDelegate = (WorkBenchAppDelegate *)[[UIApplication sharedApplication] delegate];
 	
-	NSArray *array = @[@(1), @(2), @(3), @(4), @(5), @(6), @(7)];
-    
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, (unsigned long)NULL),^(void){
+		UIView *aView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+		aView.backgroundColor = [UIColor blackColor];
+		[self addSubview:aView];
+		[UIView animateWithDuration:1.0f
+						 animations:^(void){aView.frame =CGRectMake(100, 100, 100, 100);
+						 }
+						 completion:^(BOOL finished){
+		}];
+	});
+	
+	
+	NSArray *array = @[@3, @4, @5, @4, @3, @2];
+
+	NSSet *unique = [NSSet setWithArray:array];
+	NSLog(@"%@", unique);
+
+	NSOrderedSet *uniqueO = [NSOrderedSet orderedSetWithArray:array];
+	NSLog(@"%@", uniqueO);
+
+	/*
     RACSequence *stream = [array rac_sequence];
     
     [stream map:^id(id each) {
@@ -79,6 +98,7 @@
 	self.password = @"Rapcon77";
 	self.passwordConfirmation = @"Yes";
 	NSLog(@" createEnabled: %@", self.createEnabled);
+*/
 }
 
 

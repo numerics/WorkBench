@@ -234,7 +234,7 @@ CTParagraphStyleRef CreateFullCTStyle       (
 - (int )NumberOfVisibleCharacters:(CGRect)xrect limitedToNumberOfLines:(NSInteger)numberOfLines
 {
 	CGRect				LineBounds;
-	int					charCount;
+	NSInteger			charCount;
     CTFrameRef			frame;
     CTFramesetterRef	framesetter;
 	
@@ -257,7 +257,7 @@ CTParagraphStyleRef CreateFullCTStyle       (
 	CFRelease(frame);
 	CFRelease(framesetter);
 	CGPathRelease(tempPath);
-    return charCount;
+    return (int)charCount;
 }
 
 - (void)CreateAttributeStringWithStyle:(NSString *)string ForBounds:(CGRect)xrect
@@ -294,8 +294,8 @@ CTParagraphStyleRef CreateFullCTStyle       (
         CFRange visibleRange = CTFrameGetVisibleStringRange(frame);                                     // gets the number of characters in all but the last line
         style1 = CreateFullCTStyle(kCTLeftTextAlignment,kCTLineBreakByWordWrapping);                    // get the word wrap style
 		style2 = CreateFullCTStyle(kCTLeftTextAlignment,kCTLineBreakByTruncatingTail);                  // trailing ... style
-        int len = CFAttributedStringGetLength(attStr);                                                  // total characters of the string
-        int vLen = visibleRange.length + 1;                                                             // 
+        NSInteger len = CFAttributedStringGetLength(attStr);                                                  // total characters of the string
+        NSInteger vLen = visibleRange.length + 1;                                                             //
 		CFAttributedStringSetAttribute(attStr, CFRangeMake(0, visibleRange.length), kCTParagraphStyleAttributeName, style1); // sets all but the last line
         CFAttributedStringSetAttribute(attStr, CFRangeMake(vLen-1, len - vLen), kCTParagraphStyleAttributeName, style2);        // sets the last line
         
@@ -308,8 +308,8 @@ CTParagraphStyleRef CreateFullCTStyle       (
 		fraction = 1.0;
 		if( adjustsFontSizeToFitWidth )
 		{
-			int			visLen;
-			int			len = CFAttributedStringGetLength(attStr);
+			NSInteger			visLen;
+			NSInteger	len = CFAttributedStringGetLength(attStr);
 			
 			visLen = [self NumberOfVisibleCharacters:xrect limitedToNumberOfLines:1];
             

@@ -18,10 +18,10 @@
 
 static int contrapositions[] = { 5, 6, 6, 0, 0, 0, 1 };
 
-int getposition(int origPosition, int origNum, int destNum)
+NSInteger getposition(NSInteger origPosition, NSInteger origNum, NSInteger destNum)
 {
-	int oriGmapTo6 = origPosition * kMaxNumberOfItems / origNum;
-	int contraPosIn6 = contrapositions[oriGmapTo6];
+	NSInteger oriGmapTo6 = origPosition * kMaxNumberOfItems / origNum;
+	NSInteger contraPosIn6 = contrapositions[oriGmapTo6];
 	return ceilf(1.0 * contraPosIn6 * destNum / kMaxNumberOfItems);
 }
 

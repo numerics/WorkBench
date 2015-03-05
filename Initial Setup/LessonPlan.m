@@ -62,7 +62,7 @@
 							  [LayerTransitions class], [CustomPropertyAnimation class], nil];
 		NSArray *special = [NSArray arrayWithObjects:[ShapeLayers class], [AdvancedShapeLayers class], [GradientLayers class], [TextLayers class], nil];
 		NSArray *advanced = [NSArray arrayWithObjects:[AttentionEventAnimation class], [SceneAnimation class], [StarFieldView class], [ReplicatorView class],
-							 [NanoSporesiPadView class],  [GeekBanner class],  [CoreTextView class], [ProgressBarTestView class],nil];
+							 [NanoSporesiPadView class],  [GeekBanner class],  [CoreTextView class], nil];
 		
 		
 		groups = [[NSArray alloc] initWithObjects:@"Geometry",

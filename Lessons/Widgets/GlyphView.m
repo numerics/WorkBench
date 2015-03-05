@@ -70,14 +70,14 @@
     glyPosY = 0.0;
     CGFloat xdelta = 0.0;
     int linNum = 1;
-    int cnt = CFArrayGetCount(runArray);
+    NSInteger cnt = CFArrayGetCount(runArray);
 	
 	for (CFIndex runIndex = 0; runIndex < cnt; runIndex++)                              // for each RUN
 	{
 		CTRunRef run = (CTRunRef)CFArrayGetValueAtIndex(runArray, runIndex);            // Get FONT for this run
 		CTFontRef runFont = CFDictionaryGetValue(CTRunGetAttributes(run), kCTFontAttributeName);
 		
-        int gCnt = CTRunGetGlyphCount(run);
+        NSInteger gCnt = CTRunGetGlyphCount(run);
 		for (CFIndex runGlyphIndex = 0; runGlyphIndex < gCnt; runGlyphIndex++)          // for each GLYPH in run 
 		{
 			

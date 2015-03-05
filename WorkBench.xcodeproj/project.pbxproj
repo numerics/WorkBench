@@ -481,7 +481,8 @@
 		B7C49A161598DDE7001CB848 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		B7CDED3A17BED7F600BB0759 /* GHImageContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHImageContainerView.h; sourceTree = "<group>"; };
 		B7CDED3B17BED7F600BB0759 /* GHImageContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHImageContainerView.m; sourceTree = "<group>"; };
-		DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workbench.xcconfig"; path = "Pods/Pods-Workbench.xcconfig"; sourceTree = "<group>"; };
+		CBE2C3B3622C09FBBFC4E3C9 /* Pods-Workbench.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workbench.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Workbench/Pods-Workbench.debug.xcconfig"; sourceTree = "<group>"; };
+		F6F8EF7CF266E0E5B1022D52 /* Pods-Workbench.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workbench.release.xcconfig"; path = "Pods/Target Support Files/Pods-Workbench/Pods-Workbench.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -530,7 +531,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */,
+				A416494CAC58B9965AAF7C99 /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -928,6 +929,15 @@
 			name = LowLevel;
 			sourceTree = "<group>";
 		};
+		A416494CAC58B9965AAF7C99 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBE2C3B3622C09FBBFC4E3C9 /* Pods-Workbench.debug.xcconfig */,
+				F6F8EF7CF266E0E5B1022D52 /* Pods-Workbench.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B714626817A9C5B900B59630 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -1157,7 +1167,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Workbench-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Workbench/Pods-Workbench-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1277,7 +1287,7 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */;
+			baseConfigurationReference = CBE2C3B3622C09FBBFC4E3C9 /* Pods-Workbench.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1289,7 +1299,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WorkBench_Prefix.pch;
 				INFOPLIST_FILE = "WorkBench-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = WorkBench;
 				PROVISIONING_PROFILE = "";
@@ -1299,7 +1309,7 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBCDA4D677AB45898DB80BF4 /* Pods-Workbench.xcconfig */;
+			baseConfigurationReference = F6F8EF7CF266E0E5B1022D52 /* Pods-Workbench.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1309,7 +1319,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = WorkBench_Prefix.pch;
 				INFOPLIST_FILE = "WorkBench-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = WorkBench;
 				PROVISIONING_PROFILE = "";

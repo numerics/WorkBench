@@ -1,14 +1,14 @@
 //
 //  AccordianViewController.h
 //
-//  Created by John Basile on 08/18/12.
-//  Copyright (c) 2012 Beachbody, LLC. All rights reserved.
+//  Created by John Basile on 8/20/12.
+//  Copyright 2012 Numerics. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "ItemTableCellView.h"
 
-@interface AccordianViewController : UITableView <UITableViewDelegate, UITableViewDataSource>
+@interface AccordianTableView : UITableView <UITableViewDelegate, UITableViewDataSource>
 {
 	NSMutableArray		*contentArray;
 	NSIndexPath			*expandedItemIndex;

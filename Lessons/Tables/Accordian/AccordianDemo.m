@@ -78,12 +78,14 @@
     CGRect tFrame = CGRectMake(100, 100, 320, 329);
     if( self.accordian == nil )
     {
-        self.accordian =[[AccordianViewController alloc] initWithFrame:tFrame style:UITableViewStylePlain];
+        self.accordian =[[AccordianTableView alloc] initWithFrame:tFrame style:UITableViewStylePlain];
         //AccordianViewController* srvc = [[AccordianViewController alloc] initWithNibName:@"BlankTableViewController" bundle:nil];
         //self.accordian = srvc;
         self.accordian.contentArray = [NSMutableArray arrayWithObjects:[UIImage imageNamed:@"home-heading.png"],item1,item2,item3,nil];
     }
     [self addSubview:accordian];
+    [self.accordian reloadData];
+
 }
 
 - (void) subItemSelected1:(id)sender

@@ -2,8 +2,8 @@
 //  DetailData.m
 //  WorkBench
 //
-//  Created by John Basile on 8/19/12.
-//
+//  Created by John Basile on 8/20/12.
+//  Copyright 2012 Numerics. All rights reserved.
 //
 
 #import "DetailData.h"

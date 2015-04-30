@@ -35,6 +35,7 @@
 #import "GHImageContainerView.h"
 #import "Playground.h"
 #import "NoxView.h"
+#import "ArrowAnimations.h"
 
 @interface UIViewController (ThisIsHereToAviodACompilerWarning)
 
@@ -53,7 +54,7 @@
 	self = [super init];
 	if (self != nil) 
 	{
-		NSArray *geom = [NSArray arrayWithObjects:[AccordianDemo class],[Geometry class], [TransformingLayers class], nil];
+		NSArray *geom = [NSArray arrayWithObjects:[ArrowAnimations class],[Geometry class], [TransformingLayers class], nil];
 		NSArray *hier = [NSArray arrayWithObjects:[LayerTree class],nil];
 		NSArray *drawing = [NSArray arrayWithObjects:[LayerDrawing class], [StyleProperties class], nil];
 		NSArray *animation = [NSArray arrayWithObjects:[BasicAnimation class], [AnimationGroups class], 
@@ -61,7 +62,7 @@
 							  [LayerTransitions class], [CustomPropertyAnimation class], nil];
 		NSArray *special = [NSArray arrayWithObjects:[ShapeLayers class], [AdvancedShapeLayers class], [GradientLayers class], [TextLayers class], nil];
 		NSArray *advanced = [NSArray arrayWithObjects:[AttentionEventAnimation class], [SceneAnimation class], [StarFieldView class], [ReplicatorView class],
-							 [NanoSporesiPadView class],  [GeekBanner class],  [CoreTextView class], nil];
+							 [NanoSporesiPadView class],  [GeekBanner class], [AccordianDemo class], [CoreTextView class], nil];
 		
 		
 		groups = [[NSArray alloc] initWithObjects:@"Geometry",

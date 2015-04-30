@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DFF67131AF2B05B000CF30D /* Arrow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFF67121AF2B05B000CF30D /* Arrow.m */; };
+		0DFF67161AF2B097000CF30D /* ArrowAnimations.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DFF67151AF2B097000CF30D /* ArrowAnimations.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -192,6 +194,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DFF67111AF2B05B000CF30D /* Arrow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Arrow.h; sourceTree = "<group>"; };
+		0DFF67121AF2B05B000CF30D /* Arrow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Arrow.m; sourceTree = "<group>"; };
+		0DFF67141AF2B097000CF30D /* ArrowAnimations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArrowAnimations.h; sourceTree = "<group>"; };
+		0DFF67151AF2B097000CF30D /* ArrowAnimations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArrowAnimations.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* WorkBench.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkBench.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -702,6 +708,8 @@
 			children = (
 				427DD65312D99B77000D1A37 /* BasicAnimation.h */,
 				427DD65412D99B77000D1A37 /* BasicAnimation.m */,
+				0DFF67141AF2B097000CF30D /* ArrowAnimations.h */,
+				0DFF67151AF2B097000CF30D /* ArrowAnimations.m */,
 				42BDD15017D3F4A000BEC6B1 /* RSFrameBufferLayer.h */,
 				42BDD15117D3F4A000BEC6B1 /* RSFrameBufferLayer.m */,
 				427DD69812D99FA2000D1A37 /* LayerTransitions.h */,
@@ -825,6 +833,8 @@
 				42814C791373388E00F39BAE /* ProgressBar.m */,
 				42814C7B13734B0800F39BAE /* ProgressInd.h */,
 				42814C7C13734B0900F39BAE /* ProgressInd.m */,
+				0DFF67111AF2B05B000CF30D /* Arrow.h */,
+				0DFF67121AF2B05B000CF30D /* Arrow.m */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -1235,6 +1245,7 @@
 				42771C47130B345800A42982 /* MotionAlongAPathView.m in Sources */,
 				4273D8401354E77F0090C7BE /* GlyphView.m in Sources */,
 				42006FB218828CBE00890E75 /* Playground.m in Sources */,
+				0DFF67161AF2B097000CF30D /* ArrowAnimations.m in Sources */,
 				424393A113560347003D7F02 /* CoreTextView.m in Sources */,
 				520C8B0B1954C71E006F7CBE /* NSDictionary+Addititions.m in Sources */,
 				520C8AE11954C662006F7CBE /* CKGraphics.m in Sources */,
@@ -1255,6 +1266,7 @@
 				520C8B0E1954C71E006F7CBE /* DateUtil.m in Sources */,
 				B73CBE5715E2A62400359E92 /* Item.m in Sources */,
 				B73CBE5815E2A62400359E92 /* ItemTableCellView.m in Sources */,
+				0DFF67131AF2B05B000CF30D /* Arrow.m in Sources */,
 				B73CBE5915E2A62400359E92 /* AccordianTableView.m in Sources */,
 				520C8B0A1954C71E006F7CBE /* NSURL+Additions.m in Sources */,
 				424365A2178CC71A0025505B /* BarberPole.m in Sources */,
